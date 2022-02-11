@@ -1,12 +1,64 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import './index.css';
 import App from './App';
+import Search from './components/Search';
 import reportWebVitals from './reportWebVitals';
+
+import { Provider } from "react-redux";
+import { createGlobalStyle } from 'styled-components';
+import { size } from './constants/breakpoints';
+
+
+const GlobalStyle = createGlobalStyle`
+  html {
+    font-size: 62.5%;
+
+    /* @media screen and ( max-width: ${ size.laptopL } ) {
+      font-size: 56.5%;
+    }
+    @media screen and ( max-width: ${ size.laptopM } ) {
+      font-size: 50%;
+    }
+    @media screen and ( max-height: ${ size.tablet } ) { // my macbook max-height only got 689px
+      font-size: 45%;
+    }
+    @media screen and ( max-width: ${ size.laptop } ) {
+      font-size: 48%;
+    }
+    @media screen and ( max-width: calc((${ size.tablet } + ${ size.laptop }) / 2) ) {
+      font-size: 45%;
+    }
+    @media screen and ( max-width: ${ size.tablet } ) {
+      // change to SPA style
+      font-size: 62.5%;
+    }
+    @media screen and ( max-width: ${ size.mobileL } ) {
+      // change to SPA style
+      font-size: 56.25%;
+    }
+    @media screen and ( max-width: ${ size.mobileM } ) {
+      // change to SPA style
+      font-size: 50%;
+    }
+    @media screen and (orientation: landscape) and ( max-width: ${ size.tablet } ) {
+      // change to SPA style
+      font-size: 62.5%;
+    } */
+  }
+`;
 
 ReactDOM.render(
   <React.StrictMode>
+    <GlobalStyle />
     <App />
+    {/* <BrowserRouter>
+      <Routes>
+        <Route path="/" element={ <App /> } />
+        <Route path="/search" element={ <Search /> } />
+      </Routes>
+    </BrowserRouter> */}
   </React.StrictMode>,
   document.getElementById('root')
 );
