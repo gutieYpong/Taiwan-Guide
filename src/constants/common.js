@@ -10,7 +10,13 @@ import {
   NorthIcon,
   CentralIcon,
   SouthIcon,
-  EastIcon
+  EastIcon,
+
+  Banner1,
+  Banner2,
+  Banner3,
+  Banner4,
+  Banner5,
 } from "../assets";
 
 
@@ -80,11 +86,11 @@ export const ACTIVITY_MENU_ITEM_LIST = [
 ];
 
 export const BANNER_IMAGES = [
-  'banner-1.png',
-  'banner-2.png',
-  'banner-3.png',
-  'banner-4.png',
-  'banner-5.png',
+  Banner1,
+  Banner2,
+  Banner3,
+  Banner4,
+  Banner5,
 ];
 
 export const EXPLORE_LIST = [

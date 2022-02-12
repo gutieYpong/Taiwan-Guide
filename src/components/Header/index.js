@@ -16,8 +16,7 @@ const Container = styled.div`
   justify-content: center;
   background-color: ${ ({ theme }) => theme.palette.white };
   box-shadow: 0 .2rem .4rem rgba(0, 0, 0, 0.1);
-
-  z-index: 2;
+  z-index: 3;
 `;
 
 const NaviWrapper = styled.div`
@@ -28,8 +27,6 @@ const NaviWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-column-gap: 1.6rem;
-
-  background-color: lightblue;
 `;
 
 const NaviItem = styled.div`
@@ -115,7 +112,7 @@ const FaqIconBox = styled.div`
 
 const Header = props => {
   const [isFaqHover, setIsFaqHover] = useState( false );
-  const [menuSelector, setMenuSelector] = useState('activity');
+  const [menuSelector, setMenuSelector] = useState(null);
   const theme = useTheme()
 
   return (

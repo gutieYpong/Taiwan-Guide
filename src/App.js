@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 import Header from "./components/Header";
-import Banner from "./components/BannerCarousel"
+import Banner from "./components/Banner"
 import Explore from "./components/Explore";
 import Participate from "./components/Participate";
 import Enjoy from "./components/Enjoy";
@@ -63,8 +63,8 @@ const App = props => {
     <ThemeProvider theme={ theme }>
       <Container>
         <Header />
-        {/* <Banner className="banner-carousel" />
-        <Explore />
+        <Banner />
+        {/* <Explore />
         <Participate />
         <Enjoy />
         <Subscribe />
