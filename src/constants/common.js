@@ -1,62 +1,81 @@
-export const TOGGLE_MENU_ITEM_LIST = [
-  [
-    {
-      img_name: "meal",
-      img_text: "飽餐一頓",
-    },
-    {
-      img_name: "ice-cream",
-      img_text: "甜食冰品",
-    },
-    {
-      img_name: "snack",
-      img_text: "在地美味",
-    },
-    {
-      img_name: "souvenir",
-      img_text: "特色伴手禮",
-    },
-  ],
-  [
-    {
-      img_name: "annual",
-      img_text: "年度活動",
-    },
-    {
-      img_name: "bicycle",
-      img_text: "單車之旅",
-    },
-    {
-      img_name: "outdoor",
-      img_text: "親近山海",
-    },
-    {
-      img_name: "celebration",
-      img_text: "節日慶典",
-    },
-  ],
+import {
+  AnnualIcon,
+  BicycleIcon,
+  CelebrationIcon,
+  IceCreamIcon,
+  MealIcon,
+  OutdoorIcon,
+  SnackIcon,
+  SouvenirIcon,
+  NorthIcon,
+  CentralIcon,
+  SouthIcon,
+  EastIcon
+} from "../assets";
+
+
+export const ATTRACTION_MENU_ITEM_LIST = [
+  {
+    icon_src: AnnualIcon,
+    icon_desc: "年度活動",
+  },
+  {
+    icon_src: BicycleIcon,
+    icon_desc: "單車之旅",
+  },
+  {
+    icon_src: OutdoorIcon,
+    icon_desc: "親近山海",
+  },
+  {
+    icon_src: CelebrationIcon,
+    icon_desc: "節日慶典",
+  },
+];
+
+export const DELICACY_MENU_ITEM_LIST = [
+  {
+    icon_src: MealIcon,
+    icon_desc: "飽餐一頓",
+  },
+  {
+    icon_src: IceCreamIcon,
+    icon_desc: "甜食冰品",
+  },
+  {
+    icon_src: SnackIcon,
+    icon_desc: "在地美味",
+  },
+  {
+    icon_src: SouvenirIcon,
+    icon_desc: "特色伴手禮",
+  }
 ];
 
 export const ACTIVITY_MENU_ITEM_LIST = [
   {
     zone_desc: "北台灣",
-    icon_name: "north",
+    icon_src: NorthIcon,
     district_desc: ["台北市", "新北市", "基隆市", "桃園市", "新竹市", "新竹縣", "宜蘭縣"],
+    align_style: "flex-end right"
   },
   {
     zone_desc: "中台灣",
-    icon_name: "central",
+    icon_src: CentralIcon,
     district_desc: ["台中市", "苗栗縣", "彰化縣", "南投縣", "雲林縣"],
+    align_style: "flex-end left"
   },
   {
     zone_desc: "南台灣",
-    icon_name: "south",
+    icon_src: SouthIcon,
     district_desc: ["高雄市", "台南市", "嘉義市", "嘉義縣", "屏東縣", "澎湖縣"],
+    align_style: "flex-start right"
   },
   {
     zone_desc: "東台灣",
-    icon_name: "east",
+    icon_src: EastIcon,
     district_desc: ["花蓮縣", "台東縣"],
+    align_style: "flex-start left"
   },
 ];
 
