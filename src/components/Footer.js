@@ -1,80 +1,72 @@
 import styled from "styled-components";
 
-import { Colors } from "../constants/colors.config";
-import { FacebookIcon, InstagramIcon, YoutubeIcon } from "../constants/svg";
+import { fontLayout } from "../constants/api";
+import { FacebookIcon, InstagramIcon, YoutubeIcon } from "../assets";
+
 
 const Container = styled.div`
   width: 100%;
-  height: 70px;
+  height: 7rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: ${ Colors.white };
+  background-color: ${ ({ theme }) => theme.palette.white };
 `;
 
 const FooterLeft = styled.div`
-  width: 254px;
-  height: 30px;
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex: 1;
 
   p {
-    font-family: "Noto Sans TC";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    color: ${ Colors.neutral.grey };
-    margin: 0 5px 0 0;
+    margin: 0 .5rem 0 0;
+    ${ ({ theme }) => fontLayout('Noto Sans TC', 'normal', '500', '1.6rem', '2.3rem', theme.palette.neutral.main) }
   }
-
-  svg:hover {
-    cursor: pointer;
+  svg {
     path {
-      fill: ${ Colors.neutral.grey };
+      fill: ${ ({ theme }) => theme.palette.neutral.little };
+    }
+    &:hover {
+      cursor: pointer;
+      path {
+        fill: ${ ({ theme }) => theme.palette.neutral.main };
+      }
     }
   }
 `;
 
 const FooterCenter = styled.div`
-  width: 633px;
-  height: 30px;
   flex: 2;
 
   p {
-    font-family: "Open Sans";
-    font-style: normal;
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 30px;
-    text-align: center;
-    color: ${ Colors.neutral.littlegrey };
     margin: 0;
+    text-align: center;
+
+    ${ ({ theme }) => fontLayout('Open Sans', 'normal', 'normal', '1.2rem', '3rem', theme.palette.neutral.little) }
   }
 `;
 
 const FooterRight = styled.div`
-  width: 106px;
-  height: 30px;
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 1.8rem;
 
   span {
-    font-family: "Open Sans";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 14px;
     letter-spacing: 0.05em;
-    color: ${ Colors.neutral.lightgrey };
-    margin-right: 18px;
+
+    ${ ({ theme }) => fontLayout('Open Sans', 'normal', '600', '1.4rem', '1.9rem', theme.palette.neutral.light) }
+    
+    // ! The language options feature has not finished yet
+    &:hover {
+      cursor: pointer;
+    }
   }
 `;
 
-// ! The language options feature has not finished yet
-const Footer = ( props ) => {
+const Footer = props => {
   return (
     <Container>
       <FooterLeft>
@@ -94,6 +86,5 @@ const Footer = ( props ) => {
     </Container>
   );
 }
-
 
 export default Footer;

@@ -20,6 +20,7 @@ const GlobalStyle = createGlobalStyle`
     }
     @media screen and ( max-width: ${ size.laptopM } ) {
       font-size: 50%;
+      // ? 55.5% ok, 1280 / 1440 = 8 / 9
     }
     @media screen and ( max-height: ${ size.tablet } ) { // my macbook max-height only got 689px
       font-size: 45%;

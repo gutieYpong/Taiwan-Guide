@@ -1,9 +1,8 @@
-import React, { useState } from "react";
-import styled, { css } from "styled-components";
+import React from "react";
+import styled from "styled-components";
 
 import Search from "./Search";
 import { BANNER_IMAGES } from "../../constants/common";
-import { fontLayout } from "../../constants/api";
 
 // Import Swiper styles
 import "swiper/css";

@@ -21,7 +21,8 @@ const theme = createTheme({
       yellow: "#F1D675"
     },
     neutral: {
-      lightest: "#ACACAC", // grey-200
+      lightest: "#FAFAFA", // grey-50
+      little: "#ACACAC", // grey-200
       light: "#C4C4C4",
       main: "#737373" // grey-300
     },
@@ -64,11 +65,11 @@ const App = props => {
       <Container>
         <Header />
         <Banner />
-        {/* <Explore />
+        <Explore />
         <Participate />
         <Enjoy />
         <Subscribe />
-        <Footer /> */}
+        <Footer />
       </Container>
     </ThemeProvider>
   );

@@ -8,7 +8,7 @@ import { LogoIcon, FaqIcon, FaqFilledIcon } from "../../assets";
 
 
 const Container = styled.div`
-  position: relative;
+  position: fixed;
   width: 100%;
   max-width: 144rem;
   height: 10rem;

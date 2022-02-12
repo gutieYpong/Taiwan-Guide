@@ -96,7 +96,7 @@ const ActivityMenuBox = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: .1rem solid ${ ({ theme }) => theme.palette.neutral.lightest };
+    border: .1rem solid ${ ({ theme }) => theme.palette.neutral.little };
   }
 `;
 

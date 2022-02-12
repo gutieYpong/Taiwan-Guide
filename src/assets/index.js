@@ -5,6 +5,12 @@ export { default as LogoIcon } from "./image/logo.svg";
 export { ReactComponent as FaqIcon } from "./image/icon/icon/faq-outline.svg";
 export { ReactComponent as FaqFilledIcon } from "./image/icon/icon/faq-fill.svg";
 export { default as SearchIcon } from "./image/icon/icon/search.svg";
+export { ReactComponent as ArrowIcon } from "./image/icon/icon/arrow.svg";
+export { ReactComponent as SendIcon } from "./image/icon/icon/send.svg";
+export { ReactComponent as FacebookIcon } from "./image/icon/icon/fb.svg";
+export { ReactComponent as InstagramIcon } from "./image/icon/icon/ig.svg";
+export { ReactComponent as YoutubeIcon } from "./image/icon/icon/yt.svg";
+
 
 /**
  * ... Menu Icons ...
@@ -30,3 +36,39 @@ export { default as Banner2 } from "./image/index_banner/banner-2.png";
 export { default as Banner3 } from "./image/index_banner/banner-3.png";
 export { default as Banner4 } from "./image/index_banner/banner-4.png";
 export { default as Banner5 } from "./image/index_banner/banner-5.png";
+
+/**
+ * ... Explore JEPGs ...
+ */
+export { default as Explore1 } from "./image/index_explore/explore_01.jpeg";
+export { default as Explore2 } from "./image/index_explore/explore_02.jpeg";
+export { default as Explore3 } from "./image/index_explore/explore_03.jpeg";
+export { default as Explore4 } from "./image/index_explore/explore_04.jpeg";
+export { default as Explore5 } from "./image/index_explore/explore_05.jpeg";
+export { default as Explore6 } from "./image/index_explore/explore_06.jpeg";
+export { default as Explore7 } from "./image/index_explore/explore_07.jpeg";
+
+/**
+ * ... Participate PNGs & JPGs ...
+ */
+export { default as ParticipateDefault } from "./image/index_participate/participate_default.png";
+export { default as Participate1 } from "./image/index_participate/participate_1.png";
+export { default as Participate2 } from "./image/index_participate/participate_2.jpg";
+export { default as Participate3 } from "./image/index_participate/participate_3.png";
+export { default as Participate4 } from "./image/index_participate/participate_4.png";
+
+/**
+ * ... Enjoy PNGs ...
+ */
+export { default as Enjoy1 } from "./image/index_enjoy/enjoy_01.png";
+export { default as Enjoy2 } from "./image/index_enjoy/enjoy_02.png";
+export { default as Enjoy3 } from "./image/index_enjoy/enjoy_03.png";
+export { default as Enjoy4 } from "./image/index_enjoy/enjoy_04.png";
+export { default as Enjoy5 } from "./image/index_enjoy/enjoy_05.png";
+export { default as Enjoy6 } from "./image/index_enjoy/enjoy_06.png";
+export { default as Enjoy7 } from "./image/index_enjoy/enjoy_07.png";
+
+/**
+ * ... Subscribe jpeg ...
+ */
+export { default as SubscribeImg } from "./image/subscribe.jpeg";

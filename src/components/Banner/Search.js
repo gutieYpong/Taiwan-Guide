@@ -43,7 +43,7 @@ const SearchIconBox = styled.img`
 `;
 
 const SearchInput = styled.input( ({ isFocus, theme }) => {
-  const FontColor = isFocus ? theme.palette.neutral.lightest : theme.palette.neutral.main;
+  const FontColor = isFocus ? theme.palette.neutral.little : theme.palette.neutral.main;
   const FontLayout = fontLayout( 'Open Sans', 'normal', 'normal', '1.6rem', '2.3rem', FontColor );
   return css`
     /* Layout */

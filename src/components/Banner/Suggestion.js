@@ -41,7 +41,7 @@ const Title = styled.span`
   height: 1.6rem;
 
   letter-spacing: 0.05em;
-  ${ ({ theme }) => fontLayout('Open Sans', 'normal', 'normal', '1.2rem', '1.6rem', theme.palette.neutral.lightest) }
+  ${ ({ theme }) => fontLayout('Open Sans', 'normal', 'normal', '1.2rem', '1.6rem', theme.palette.neutral.little) }
 `;
 
 
