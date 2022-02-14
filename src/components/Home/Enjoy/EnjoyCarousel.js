@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-import { fontLayout } from "../../constants/api";
-import { ENJOY_LIST } from '../../constants/common';
+import { fontLayout } from "../../../constants/api";
+import { ENJOY_LIST } from '../../../constants/common';
 
 // Import Swiper styles
 import "swiper/css";

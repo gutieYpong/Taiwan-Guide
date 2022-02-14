@@ -1,18 +1,19 @@
 import styled from "styled-components";
 
-import { fontLayout } from "../../constants/api";
-import { EXPLORE_LIST } from "../../constants/common";
-import { ArrowIcon } from "../../assets";
+import { fontLayout } from "../../../constants/api";
+import { EXPLORE_LIST } from "../../../constants/common";
+import { ArrowIcon } from "../../../assets";
+
 
 const Container = styled.div`
   width: 100%;
   max-width: 144rem;
-  height: 106rem;
+  height: 100%;
+  max-height: 106rem;
   display: flex;
   justify-content: flex-end;
   padding: 15rem 0 17rem 0;
-
-  /* background-color: yellow; */
+  background-color: ${ ({ theme }) => theme.palette.white };
 `;
 
 const InnerExplore = styled.div`

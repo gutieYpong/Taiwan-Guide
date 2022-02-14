@@ -7,7 +7,7 @@ import {
   ATTRACTION_MENU_ITEM_LIST,
   DELICACY_MENU_ITEM_LIST,
   ACTIVITY_MENU_ITEM_LIST
-} from "../../../constants/common";
+} from "../../../../constants/common";
 
 
 /**

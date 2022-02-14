@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import Search from "./Search";
-import { BANNER_IMAGES } from "../../constants/common";
+import { BANNER_IMAGES } from "../../../constants/common";
 
 // Import Swiper styles
 import "swiper/css";
@@ -17,7 +17,8 @@ const Container = styled.div`
   position: relative;
   width: 100%;
   max-width: 144rem;
-  height: 92.4rem;
+  height: 100%;
+  max-height: 92.4rem;
 
   //* Carousel layout
   .swiper {

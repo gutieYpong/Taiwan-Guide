@@ -1,14 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-import Header from "./components/Header";
-import Banner from "./components/Banner"
-import Explore from "./components/Explore";
-import Participate from "./components/Participate";
-import Enjoy from "./components/Enjoy";
-import Subscribe from "./components/Subscribe";
-import Footer from "./components/Footer";
+import HomePage from "./components/Home";
+import ResultPage from './components/Result';
 
 
 const theme = createTheme({
@@ -53,8 +49,9 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  /* flex-direction: column; */
+  /* align-items: center; */
 
   background-color: lightcoral;
 `;
@@ -62,14 +59,13 @@ const Container = styled.div`
 const App = props => {
   return (
     <ThemeProvider theme={ theme }>
-      <Container>
-        <Header />
-        <Banner />
-        <Explore />
-        <Participate />
-        <Enjoy />
-        <Subscribe />
-        <Footer />
+      <Container className="base-container">
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={ <HomePage /> } />
+            <Route path="/result" element={ <ResultPage /> } />
+          </Routes>
+        </BrowserRouter>
       </Container>
     </ThemeProvider>
   );

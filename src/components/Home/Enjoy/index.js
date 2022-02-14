@@ -1,14 +1,15 @@
 import styled from "styled-components";
 
 import EnjoyCarousel from "./EnjoyCarousel";
-import { fontLayout } from "../../constants/api";
-import { ArrowIcon } from "../../assets";
+import { fontLayout } from "../../../constants/api";
+import { ArrowIcon } from "../../../assets";
 
 
 const Container = styled.div`
   width: 100%; // docs: 1440px
   max-width: 144rem;
-  height: 89.6rem;
+  height: 100%;
+  max-height: 89.6rem;
   display: flex;
   flex-direction: column;
   align-items: center;

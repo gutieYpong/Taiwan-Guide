@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-import { fontLayout } from "../../../constants/api";
+import { fontLayout } from "../../../../constants/api";
 
 
 /**
- * ... delicay menu part ... (same as attraction)
+ * ... attraction menu part ... (same as delicay)
  */
 
-const DelicacyMenuItemBox = styled.div`
+const AttractionMenuItemBox = styled.div`
   width: 14.5rem;
   height: 6.8rem;
   display: flex;
@@ -28,7 +28,7 @@ const DelicacyMenuItemBox = styled.div`
   }
 `;
 
-const DelicacyMenuBox = styled.div`
+const AttractionMenuBox = styled.div`
   position: absolute;
   width: 100%;
   height: 10rem;
@@ -48,20 +48,20 @@ const DelicacyMenuBox = styled.div`
   filter: drop-shadow(0 .2rem .4rem rgba(0, 0, 0, 0.1));
 `;
 
-
-const DelicacyMenu = ({ ItemList }) => {
+const AttractionMenu = ({ ItemList }) => {
   return (
-    <DelicacyMenuBox>
+    <AttractionMenuBox>
       {
         ItemList.map((item, index) => (
-          <DelicacyMenuItemBox key={ index }>
+          <AttractionMenuItemBox key={ index }>
             <img src={ item.icon_src } alt={ item.icon_desc } />
             <span>{ item.icon_desc }</span>
-          </DelicacyMenuItemBox>
+          </AttractionMenuItemBox>
         ))
       }
-    </DelicacyMenuBox>
+    </AttractionMenuBox>
+
   );
 };
 
-export default DelicacyMenu;
+export default AttractionMenu;

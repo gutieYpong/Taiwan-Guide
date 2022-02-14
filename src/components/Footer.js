@@ -5,8 +5,10 @@ import { FacebookIcon, InstagramIcon, YoutubeIcon } from "../assets";
 
 
 const Container = styled.div`
+  /* grid-area: ${ ({ GridArea }) => GridArea ? 'footer' : 'auto' }; */
   width: 100%;
-  height: 7rem;
+  height: 100%;
+  max-height: 6.8rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -66,9 +68,9 @@ const FooterRight = styled.div`
   }
 `;
 
-const Footer = props => {
+const Footer = ({ GridArea }) => {
   return (
-    <Container>
+    <Container GridArea={ GridArea }>
       <FooterLeft>
         <p>Follow us</p>
         <FacebookIcon />

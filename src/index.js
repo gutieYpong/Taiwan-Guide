@@ -1,9 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import './index.css';
 import App from './App';
-import Search from './components/Search';
 import reportWebVitals from './reportWebVitals';
 
 import { Provider } from "react-redux";
@@ -17,12 +15,12 @@ const GlobalStyle = createGlobalStyle`
 
     /* @media screen and ( max-width: ${ size.laptopL } ) {
       font-size: 56.5%;
-    }
+    } */
     @media screen and ( max-width: ${ size.laptopM } ) {
-      font-size: 50%;
+      font-size: 56.5%;
       // ? 55.5% ok, 1280 / 1440 = 8 / 9
     }
-    @media screen and ( max-height: ${ size.tablet } ) { // my macbook max-height only got 689px
+    /* @media screen and ( max-height: ${ size.tablet } ) { // my macbook max-height only got 689px
       font-size: 45%;
     }
     @media screen and ( max-width: ${ size.laptop } ) {
@@ -54,12 +52,6 @@ ReactDOM.render(
   <React.StrictMode>
     <GlobalStyle />
     <App />
-    {/* <BrowserRouter>
-      <Routes>
-        <Route path="/" element={ <App /> } />
-        <Route path="/search" element={ <Search /> } />
-      </Routes>
-    </BrowserRouter> */}
   </React.StrictMode>,
   document.getElementById('root')
 );

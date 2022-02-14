@@ -1,14 +1,15 @@
 import { useState } from "react";
 import styled from "styled-components";
 
-import { fontLayout } from "../../constants/api";
-import { PARTICIPATE_IMAGES } from "../../constants/common";
+import { fontLayout } from "../../../constants/api";
+import { PARTICIPATE_IMAGES } from "../../../constants/common";
 
 
 const Container = styled.div`
   width: 100%;
   max-width: 144rem;
-  height: 78rem;
+  height: 100%;
+  max-height: 78rem;
   padding: 16rem 0 19rem 0;
   background-color: ${ ({ theme }) => theme.palette.neutral.lightest };
 `;

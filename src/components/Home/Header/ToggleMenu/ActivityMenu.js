@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { fontLayout } from "../../../constants/api";
+import { fontLayout } from "../../../../constants/api";
 
 
 /**

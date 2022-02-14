@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import styled, { useTheme } from "styled-components";
 
 import ToggleMenu from "./ToggleMenu";
-import { fontLayout } from "../../constants/api";
-import { HeartIcon } from "../../constants/svg";
-import { LogoIcon, FaqIcon, FaqFilledIcon } from "../../assets";
+import { fontLayout } from "../../../constants/api";
+import { HeartIcon } from "../../../constants/svg";
+import { LogoIcon, FaqIcon, FaqFilledIcon } from "../../../assets";
 
 
 const Container = styled.div`
+  /* position: relative;   */
   position: fixed;
   width: 100%;
   max-width: 144rem;
-  height: 10rem;
+  height: 100%;
+  max-height: 10rem;
   display: flex;
   justify-content: center;
   background-color: ${ ({ theme }) => theme.palette.white };
@@ -129,10 +132,12 @@ const Header = props => {
         </NaviItem>
         <NaviItem StartCol={ 5 } EndCol={ 9 } 
         >
-          <CategoryItem 
-            TitleCH='找景點' TitleEN='ATTRACTION'
-            menuSelector={ 'attraction' } setMenuSelector={ setMenuSelector }
-          />
+          <Link to="/result" style={{ textDecoration: 'none' }}>
+            <CategoryItem 
+              TitleCH='找景點' TitleEN='ATTRACTION'
+              menuSelector={ 'attraction' } setMenuSelector={ setMenuSelector }
+            />
+          </Link>
           <CategoryItem 
             TitleCH='找美食' TitleEN='DELICACY'
             menuSelector={ 'delicacy' } setMenuSelector={ setMenuSelector }

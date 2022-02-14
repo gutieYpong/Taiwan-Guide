@@ -10,6 +10,7 @@ export { ReactComponent as SendIcon } from "./image/icon/icon/send.svg";
 export { ReactComponent as FacebookIcon } from "./image/icon/icon/fb.svg";
 export { ReactComponent as InstagramIcon } from "./image/icon/icon/ig.svg";
 export { ReactComponent as YoutubeIcon } from "./image/icon/icon/yt.svg";
+export { ReactComponent as CancelIcon } from "./image/icon/icon/cancel.svg";
 
 
 /**

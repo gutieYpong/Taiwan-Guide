@@ -1,13 +1,15 @@
 import styled from "styled-components";
 
-import { fontLayout } from "../../constants/api";
-import { SubscribeImg, SendIcon } from "../../assets";
+import { fontLayout } from "../../../constants/api";
+import { SubscribeImg, SendIcon } from "../../../assets";
 
 
 const Container = styled.div`
+  /* grid-area: subscribe; */
   width: 100%;
   max-width: 144rem;
-  height: 62rem;
+  height: 100%;
+  max-height: 62rem;
   display: flex;
   justify-content: center;
   align-items: center;

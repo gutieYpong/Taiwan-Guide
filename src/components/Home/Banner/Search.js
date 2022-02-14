@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import styled, { css } from "styled-components";
 
 import Suggestion from "./Suggestion";
-import { SearchIcon } from "../../assets";
-import { fontLayout } from "../../constants/api";
+import { SearchIcon } from "../../../assets";
+import { fontLayout } from "../../../constants/api";
 
 
 const SearchTitle = styled.div`
