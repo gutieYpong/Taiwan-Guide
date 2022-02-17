@@ -88,7 +88,7 @@ const FaqIconBox = styled.div`
 
 const Header = props => {
   const [isFaqHover, setIsFaqHover] = useState( false );
-  const theme = useTheme()
+  const theme = useTheme();
 
   return (
     <Container>

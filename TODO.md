@@ -6,10 +6,9 @@ TODO.
 - Guide Menu ✅ 
 - Search Box ✅
 - Project re-initialize, w/ restructuring & relative responsive design ✅
-- Search Page
+- Search Page layout ✅
 
 TO BE FIXED.
-- Banner, Participate, Enjoy images should be integrated with API?
 - Language options
 - Activity Menu Container has duplicated base layer ✅
 - Search Box: add an alert when user submits with no content

@@ -11,7 +11,8 @@ export { ReactComponent as FacebookIcon } from "./image/icon/icon/fb.svg";
 export { ReactComponent as InstagramIcon } from "./image/icon/icon/ig.svg";
 export { ReactComponent as YoutubeIcon } from "./image/icon/icon/yt.svg";
 export { ReactComponent as CancelIcon } from "./image/icon/icon/cancel.svg";
-
+export { default as HeartOutlineIcon } from "./image/icon/icon/heart-outline.svg";
+export { ReactComponent as GPSIcon } from "./image/icon/icon/gps.svg";
 
 /**
  * ... Menu Icons ...
@@ -73,3 +74,11 @@ export { default as Enjoy7 } from "./image/index_enjoy/enjoy_07.png";
  * ... Subscribe jpeg ...
  */
 export { default as SubscribeImg } from "./image/subscribe.jpeg";
+
+
+/**
+ * ... Missing PNGs ...
+ */
+export { default as MissingSpotImg } from "./image/search_page/missing-attraction.png";
+export { default as MissingRestaurantImg } from "./image/search_page/missing-delicacy.png";
+export { default as MissingActivityImg } from "./image/search_page/missing-activity.png";

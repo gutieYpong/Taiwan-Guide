@@ -10,6 +10,7 @@ import ResultPage from './components/Result';
 const theme = createTheme({
   palette: {
     primary: {
+      little: "#F1F5EE", // green-100
       light: "#A1B893", // green-200
       main: "#769763" // green-300
     },
@@ -20,7 +21,8 @@ const theme = createTheme({
       lightest: "#FAFAFA", // grey-50
       little: "#ACACAC", // grey-200
       light: "#C4C4C4",
-      main: "#737373" // grey-300
+      main: "#737373", // grey-300
+      darker: "#4F4F4F" // grey-400
     },
     black: "#000000",
     white: "#FFFFFF",

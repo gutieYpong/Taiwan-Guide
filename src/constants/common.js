@@ -179,3 +179,6 @@ export const ENJOY_LIST = [
     img_desc: '餐點上桌前，將佐料瑤舀進碗內，再加入一大早熬製的大骨高湯，最後放進麵條，保持麵體彈性口感不軟爛。'
   },
 ];
+
+export const SORTING_FILTER_LIST = ['相關結果優先', '最新結果優先', '最舊結果優先'];
+export const CITY_LIST = ['台北市', '新北市', '桃園市', '基隆市', '新竹市', '台中市'];

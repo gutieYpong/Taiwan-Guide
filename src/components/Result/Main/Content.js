@@ -1,9 +1,9 @@
-import styled from "styled-components";
-import { Pagination, Stack } from '@mui/material';
+import styled, { useTheme } from "styled-components";
+import { Pagination, Stack, Skeleton } from '@mui/material';
 
+import { CardContainer, Card } from "./Card";
+import spotJson from "../../../constants/scenic.spot.json"
 import { fontLayout } from "../../../constants/api";
-import CardImage from "../../../assets/image/search_page/烏腳病紀念館.jpg";
-
 
 const Container = styled.div`
   width: 100%;
@@ -14,7 +14,7 @@ const Container = styled.div`
   margin-top: 6.2rem;
   margin-bottom: 8rem;
 
-  background-color: lightblue;
+  /* background-color: lightblue; */
 `;
 
 const CardBox = styled.div`
@@ -24,83 +24,34 @@ const CardBox = styled.div`
   grid-row-gap: 1.6rem;
   padding: .8rem 0;
 
-  background-color: lightsalmon;
+  /* background-color: lightsalmon; */
 `;
 
-const ContentCard = styled.div`
-  width: 28.367rem;
-  height: 20.8rem;
-  display: flex;
-  flex-direction: column;
-  gap: .8rem;
-  padding: .8rem;
-
-  img {
-    width: 100%;
-    height: 13.7rem;
-    object-fit: cover;
-    /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(.jpg); */
-    border-radius: .5rem;
-  }
-
-  .content-card--desc {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: .4rem;
-    padding: 0 .4rem;
-
-    .content-card--title {
-      margin: 0;
-      letter-spacing: 0.1em;
-      ${ ({ theme }) => fontLayout('Noto Sans TC', 'normal', '500', '2rem', '2.9rem', theme.palette.neutral.main) }
-    }
-    .content-car--location {
-      svg {
-
-      }
-      span {
-        letter-spacing: 0.1em;
-        ${ ({ theme }) => fontLayout('Noto Sans TC', 'normal', 'normal', '1.4rem', '2rem', theme.palette.neutral.main) }
-      }
-    }
-  }
-`;
-
-const Card = () => (
-  <ContentCard>
-    <img src={ CardImage } alt="test" />
-    <div className="content-card--desc">
-      <p className="content-card--title">綠島豆丁海馬海底郵筒</p>
-      <div className="content-car--location">
-
-        <span>臺南市 將軍區</span>
-      </div>
-    </div>
-  </ContentCard>
-)
 
 const Content = props => {
+  const theme = useTheme();
   return (
     <Container>
       <CardBox>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {
+          spotJson.map((item, index) => {
+            if( index >= 17 ) return null;
+            return (
+              <Card
+                key={ item.ScenicSpotID }
+                Item={ item }
+                Theme={ theme }
+              />
+            )
+          })
+        }
+        <CardContainer>
+          <Skeleton sx={{ width: '100%', height: '13.7rem', borderRadius: '.5rem', backgroundColor: '#E7E7E7' }} animation="wave"  variant="rectangular" />
+          <div className="content-card--desc">
+            <Skeleton sx={{ width: '81.71%', backgroundColor: '#E7E7E7' }} animation="wave" variant="rectangular" />
+            <Skeleton sx={{ width: '51.36%', backgroundColor: '#E7E7E7' }} animation="wave" variant="rectangular" />
+          </div>
+        </CardContainer>
       </CardBox>
       <Stack spacing={2} sx={{ alignSelf: 'end' }}>
         <Pagination

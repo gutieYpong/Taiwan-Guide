@@ -2,6 +2,9 @@ import React from "react";
 import styled from "styled-components";
 
 import { fontLayout } from "../../../constants/api";
+import { Dropdown } from "../../../stories/mine/Dropdown";
+import { CITY_LIST } from "../../../constants/common";
+
 
 const Container = styled.div`
   /* grid-area: search; */
@@ -46,40 +49,32 @@ const Title = styled.div`
 const SearchBar = styled.div`
   width: 100%;
   height: 100%;
+  max-height: 4.6rem;
   display: flex;
   gap: 1.6rem;
   align-items: center;
 
+
   /* background-color: lightblue; */
 `;
 
-const KeywordInput = styled.input`
+const KeywordInput = styled.div`
   /* width: 36.8rem; */
   flex: 1;
   height: 100%;
-  border: .05rem solid ${ ({ theme }) => theme.palette.neutral.main };
-  border-radius: .5rem;
-  padding: 0 2.4rem;
-  outline: 0;
 
-  &::placeholder {
-    letter-spacing: 0.05em;
-    ${ ({ theme }) => fontLayout('Noto Sans TC', 'normal', 'normal', '1.4rem', '2rem', theme.palette.neutral.little) };
-  }
-`;
-
-const CityDropDown = styled.input`
-  /* width: 36.8rem; */
-  flex: 1;
-  height: 100%;
-  border: .05rem solid ${ ({ theme }) => theme.palette.neutral.main };
-  border-radius: .5rem;
-  padding: 0 2.4rem;
-  outline: 0;
-
-  &::placeholder {
-    letter-spacing: 0.05em;
-    ${ ({ theme }) => fontLayout('Noto Sans TC', 'normal', 'normal', '1.4rem', '2rem', theme.palette.neutral.little) };
+  input[type='text'] {
+    width: 100%;
+    height: 100%;
+    border: .05rem solid ${ ({ theme }) => theme.palette.neutral.main };
+    border-radius: .5rem;
+    padding: 0 2.4rem;
+    outline: 0;
+  
+    &::placeholder {
+      letter-spacing: 0.05em;
+      ${ ({ theme }) => fontLayout('Noto Sans TC', 'normal', 'normal', '1.4rem', '2rem', theme.palette.neutral.little) };
+    }
   }
 `;
 
@@ -101,8 +96,10 @@ const Search = props => {
       <SearchWrapper>
         <Title children="你目前正在搜索" />
         <SearchBar>
-          <KeywordInput placeholder="輸入關鍵字" />
-          <CityDropDown placeholder="選擇縣市" />
+          <KeywordInput>
+            <input type="text" placeholder="輸入關鍵字" />
+          </KeywordInput>
+          <Dropdown CITY_LIST={ CITY_LIST } style={{ flex: 1, height: '100%' }} />
           <SearchBtn children="搜尋" />
         </SearchBar>
       </SearchWrapper>

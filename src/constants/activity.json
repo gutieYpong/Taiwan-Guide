@@ -1,0 +1,689 @@
+[
+  {
+    "ActivityID": "C2_315080000H_080700",
+    "ActivityName": "臺南市國際龍舟錦標賽",
+    "Description": "本活動乃結合臺灣傳統節慶習俗水上運動競賽發展而來，深具地方文化的代表性，是臺南極具特色的文化觀光活動。臺南市也是臺灣龍舟競渡的重要發源地，比賽前後循古禮舉行請水神、送水神、祭江，及封江儀式，相當別具意義。每年的國際龍舟錦標賽均廣邀國內外遊客熱情參加，是臺南市固定舉辦之重大節慶之一。民國101年（西元2012年）的參賽隊伍更高達179隊，打破歷年來參與龍舟錦標賽的輝煌紀錄，盛況空前。臺南市是兼具活力與文化氣息的城市，來臺南看龍舟比賽、品美食、品文化古都新臺南，感受道地濃濃的人情味，歡慶端午佳節。",
+    "Location": "臺南市 安平區",
+    "Address": "臺南運河（安億橋至承天橋）",
+    "Organizer": "臺南市政府",
+    "StartTime": "2022-06-01T00:00:00+08:00",
+    "EndTime": "2022-06-03T00:00:00+08:00",
+    "Cycle": "2022年時間未定",
+    "WebsiteUrl": "https://dragonboat.tn.edu.tw/",
+    "Picture": {
+      "PictureUrl1": "https://www.taiwan.net.tw/att/event/9e7c6515-e277-4edf-a9ba-729fd4787a95.jpg",
+      "PictureDescription1": "小型競技龍舟以取得該水道旗幟先後取勝，增加活動刺激性",
+      "PictureUrl2": "https://www.taiwan.net.tw/att/event/5fa551e6-3b9e-4a32-b8ae-e698d46bdea5.jpg",
+      "PictureDescription2": "臺南國際龍舟賽有300多年歷史，是臺南市重要的民俗活動之一，以夜間競渡作為臺南龍舟賽的一大特色，再加上以LED裝飾龍舟，五彩繽紛的景色倒映在夜間的安平運河，美不勝收",
+      "PictureUrl3": "https://www.taiwan.net.tw/att/event/3b67ecf6-417c-48c6-a7f9-523814c93303.jpg",
+      "PictureDescription3": "市長親臨"
+    },
+    "Position": {
+      "PositionLon": 120.16744232177734,
+      "PositionLat": 22.99806785583496,
+      "GeoHash": "wsj6y6xm2"
+    },
+    "Class1": "節慶活動",
+    "Class2": "藝文活動",
+    "City": "臺南市",
+    "SrcUpdateTime": "2022-02-17T01:13:08+08:00",
+    "UpdateTime": "2022-02-17T02:04:29+08:00"
+  },
+  {
+    "ActivityID": "C2_315080000H_080701",
+    "ActivityName": "2022月津港燈節",
+    "Description": "月津港燈節是臺灣眾多燈會中，唯一獲得德國紅點設計大獎、被譽為全臺最藝術、最有質感的燈節。月津港燈節以「一府、二鹿、三艋舺、四月津」的臺南鹽水月津港作為展覽場域，特色在於藉由整治完成的月津港地景環境，結合地方豐厚文化內涵與創新藝術，邀請國內外藝術團隊以當地湖面、水岸景致來襯托藝術燈飾，營造令人驚豔的獨特燈節意象，更有如孕育新銳藝術家的交流平台。活動期間，每到黃昏，五顏六色的藝術燈飾開啟時，月津港呈現一片璀璨亮麗，有如夜之美術館，照耀在河面上，遊客穿梭於河岸旁，充滿著夢幻浪漫氛圍。藉由燈區結合河面燈光倒影，將河景、地貌、建築製作而成奇幻、詩意、飄渺的空間，參觀人潮屢創新高，「月津港燈節」已形塑其活動品牌與知名度，為臺南市最重要的文化活動之一。",
+    "Location": "臺南市 鹽水區",
+    "Address": "月津港",
+    "Organizer": "臺南市政府文化局",
+    "StartTime": "2022-01-22T00:00:00+08:00",
+    "EndTime": "2022-02-28T00:00:00+08:00",
+    "WebsiteUrl": "https://www.yuejinlanternfestival.com/",
+    "Picture": {
+      "PictureUrl1": "https://www.taiwan.net.tw/att/event/1be5cf25-28ae-4588-8450-e3d0cd75bf11.jpg",
+      "PictureDescription1": "燈區作品-光繪生活",
+      "PictureUrl2": "https://www.taiwan.net.tw/att/event/9cffa41a-e821-4dd9-8d4d-49ef3e354443.jpg",
+      "PictureDescription2": "開幕啓燈晚會歌手演唱，與作品（人魚的旋律）相互輝映",
+      "PictureUrl3": "https://www.taiwan.net.tw/att/event/462ee7b2-b61d-4ed5-aeff-465750b61826.jpg",
+      "PictureDescription3": "燈區作品-10x10"
+    },
+    "Position": {
+      "PositionLon": 120.26678466796875,
+      "PositionLat": 23.317060470581055,
+      "GeoHash": "wsjs8sxxe"
+    },
+    "Class1": "節慶活動",
+    "Class2": "藝文活動",
+    "City": "臺南市",
+    "SrcUpdateTime": "2022-02-17T01:13:08+08:00",
+    "UpdateTime": "2022-02-17T02:04:29+08:00"
+  },
+  {
+    "ActivityID": "C2_315080000H_080756",
+    "ActivityName": "一見雙雕藝術季",
+    "Description": "「一見雙雕藝術季」活動是南臺灣每年暑假期間盛大的雕塑藝術展演活動，活動主要於臺南市七股區的七股鹽山、七股遊客中心及將軍區馬沙溝等地方，展出以雲嘉南在地素材，包括鹽、海沙、漂流木等等材料，所雕塑創作的藝術品，甚至南臺灣炙熱的陽光，都是藝術家豐富創意裡可創作的元素。不僅創作元素取材自在地，「一見雙雕藝術季」的重要雕塑主角&ndash;鹽雕展，也是目前臺灣獨一無二的展示，藉由鹽雕再結合其他不同材料的雕塑作品，提供遊客每年不同感受的一見雙雕體驗。此外活動也結合年度觀光主題，包括小鎮旅遊、自行車旅遊等，推出假日系列活動，鼓勵親子、好友來到濱海小鎮一覽濱海美景，豐富的活動內容，每年均吸引超過十萬人次遊客前往觀賞。自民國101年（西元2012年）起創辦全臺獨一無二的「一見雙雕藝術季」，希望透過創新手法、強而有力行銷，達到吸引國、內外旅客造訪，奠定活動節慶品牌地位，同時更形成觀光與藝術兼容並蓄的新氣象，並為濱海遊樂注入新風潮，再創產業新契機。為強化西南濱海獨有的鹽業文化風情，自民國108年（西元2019年）起轉型為「鹽雕+光雕」，結合靜態「鹽雕」作品展、動態影音「光雕」秀等吸睛工藝手法，打造鹽業文化絢麗的視覺藝術饗宴。民國110年（西元2021年）進一步嘗試結合在地的「鹽」與「漂流木」兩種材料，以永續再生的環保理念，規劃鹽雕與漂流木雕地景藝術展，將雲嘉南在地特色與藝術融為一體，為遊客獻上一場不同以往的一見雙雕藝術饗宴。",
+    "Location": "臺南市 七股區",
+    "Address": "七股鹽山",
+    "Organizer": "交通部觀光局雲嘉南濱海國家風景區管理處",
+    "StartTime": "2022-07-01T00:00:00+08:00",
+    "EndTime": "2022-08-01T00:00:00+08:00",
+    "Cycle": "2022年時間未定",
+    "WebsiteUrl": "https://swcoast-nsa.travel/zh-tw",
+    "Picture": {
+      "PictureUrl1": "https://www.taiwan.net.tw/att/event/51db4ec8-b6cf-4889-92ce-037533ea5724.jpg",
+      "PictureDescription1": "鹽雕-招潮蟹",
+      "PictureUrl2": "https://www.taiwan.net.tw/att/event/fcb4cd3b-c0ce-4dcd-8ee0-e24daeafa929.jpg",
+      "PictureDescription2": "鹽雕-喔熊",
+      "PictureUrl3": "https://www.taiwan.net.tw/att/event/d5c90667-2d22-403a-bfdc-70e32b193498.jpg",
+      "PictureDescription3": "鹽雕"
+    },
+    "Position": {
+      "PositionLon": 120.0999984741211,
+      "PositionLat": 23.154125213623047,
+      "GeoHash": "wsj7szn4s"
+    },
+    "Class1": "節慶活動",
+    "Class2": "藝文活動",
+    "City": "臺南市",
+    "SrcUpdateTime": "2022-02-17T01:13:08+08:00",
+    "UpdateTime": "2022-02-17T02:04:29+08:00"
+  },
+  {
+    "ActivityID": "C2_315080000H_080788",
+    "ActivityName": "2022台灣慶元宵-鹽水蜂炮",
+    "Description": "鹽水蜂炮，是元宵節轟動全台的重要觀光民俗活動。每年吸引觀光客人數，數以萬計，和「平溪天燈」有「北天燈，南蜂炮」之美稱。鹽水蜂炮起源相傳於西元1885年七、八月間，鹽水街流行霍亂、瘟疫，當時因醫藥不發達，死者日眾，居民恐慌，祈求關聖帝君解災難。關聖帝君乃於元宵夜命周倉將軍為前導，帝君神轎殿後，眾善信大德隨神轎一路燃放鞭炮，遶境大街小巷至天明，將邪魔一掃而除。自此，後代子孫每年均沿襲往例，迎請關聖帝君元宵夜出巡。這種當初單純的燃放鞭炮蛻變為「蜂炮」、「炮城」等活動，奠定今日鹽水遠近馳名的民俗特色。鹽水蜂炮的璀燦亮麗，可媲美巴西聞名世界的「嘉年華會」，元宵夜鹽水各商戶隨著神轎遶街施放蜂炮，使整個鹽水古鎮漫天震響，此起彼落，夜色中天空五光十色，聲光千變萬化，蔚為奇觀。鹽水蜂炮為臺灣重要民俗活動發展至今已將近150年，其舉辦宗旨與目的從驅逐瘟疫逐步演變至節日慶祝；活動影響範圍從鹽水擴大至全世界，成為亞洲的十大慶典、全球三大嘉年華之一，對臺灣走向國際舞台發揮重大的貢獻。※原訂2/14、15兩天的蜂炮活動，改於元宵節2/15當晚舉行，並取消遶境、不開放遊客犁蜂炮，各宮廟和民間的炮城集中在武廟等14個定點，以及原鹽水國中操場主炮城區施放。",
+    "Location": "臺南市 鹽水區",
+    "Address": "鹽水武廟",
+    "Organizer": "臺南市政府觀光旅遊局、鹽水武廟",
+    "StartTime": "2022-02-15T00:00:00+08:00",
+    "EndTime": "2022-02-15T00:00:00+08:00",
+    "Picture": {
+      "PictureUrl1": "https://www.taiwan.net.tw/att/event/233c4f2c-bbc9-4abb-8d4f-9bd68badda44.jpg",
+      "PictureDescription1": "銀牌獎「蜂擁而至」",
+      "PictureUrl2": "https://www.taiwan.net.tw/att/event/f665f0df-aa73-4b1f-a180-350428208c43.jpg",
+      "PictureDescription2": "銀牌獎「武廟盛會」",
+      "PictureUrl3": "https://www.taiwan.net.tw/att/event/89c3831b-4ceb-40ed-b7ea-fe18fe71c279.jpg",
+      "PictureDescription3": "銅牌獎「武廟廟庭人山人海」"
+    },
+    "Position": {
+      "PositionLon": 120.2657470703125,
+      "PositionLat": 23.32383918762207,
+      "GeoHash": "wsjs8tyz5"
+    },
+    "Class1": "節慶活動",
+    "Class2": "藝文活動",
+    "City": "臺南市",
+    "SrcUpdateTime": "2022-02-17T01:13:08+08:00",
+    "UpdateTime": "2022-02-17T02:04:29+08:00"
+  },
+  {
+    "ActivityID": "C2_315080000H_080792",
+    "ActivityName": "2022臺灣國際蘭展",
+    "Description": "一年一度的臺灣國際蘭展自民國94年（西元2005年）創辦至今，每年於臺南市後壁區臺灣蘭花生物科技園區舉辦，並已成為國際花卉界年度盛事，地位與「東京蘭展」、「世界蘭展」相當，並列為三大國際蘭展。臺灣國際蘭展每年皆規劃不同主題，逐年創造話題吸引數十萬民眾前往觀賞，舉辦宗旨為促進臺灣蘭花產業發展，並藉由蘭花展示、佈景、運用及結合文創、生物科技等產品，提升民眾賞花興趣，進而帶動花卉消費習慣，促進國際交流並維持蘭花產業永續經營。",
+    "Location": "臺南市 後壁區",
+    "Address": "臺灣蘭花生物科技園區",
+    "Organizer": "臺南市政府、中華民國對外貿易發展協會",
+    "StartTime": "2022-03-26T00:00:00+08:00",
+    "EndTime": "2022-04-05T00:00:00+08:00",
+    "WebsiteUrl": "https://tios.tw/",
+    "Picture": {
+      "PictureUrl1": "https://www.taiwan.net.tw/att/event/b773a000-57fa-4979-8a6f-8afbe62420dd.jpg",
+      "PictureDescription1": "入口意象",
+      "PictureUrl2": "https://www.taiwan.net.tw/att/event/7da3aaf8-a24c-4a51-be4b-30807f4e8eed.jpg",
+      "PictureDescription2": "主題意象-建築百年",
+      "PictureUrl3": "https://www.taiwan.net.tw/att/event/f3b912ec-aa44-4194-9fc8-4cc907993da3.jpg",
+      "PictureDescription3": "主題意象-湯泉百年"
+    },
+    "Position": {
+      "PositionLon": 120.37763214111328,
+      "PositionLat": 23.33917808532715,
+      "GeoHash": "wsjsg2b2d"
+    },
+    "Class1": "節慶活動",
+    "Class2": "藝文活動",
+    "City": "臺南市",
+    "SrcUpdateTime": "2022-02-17T01:13:08+08:00",
+    "UpdateTime": "2022-02-17T02:04:29+08:00"
+  },
+  {
+    "ActivityID": "C2_315080000H_080876",
+    "ActivityName": "鯤鯓王平安鹽祭",
+    "Description": "雲嘉南濱海區域內擁有臺灣獨特之鹽業歷史風光，以及廣大的沙洲、潟湖以及溼地景觀，而早期西南沿海地帶，共有七個袖珍島嶼（即當今的沙洲），形狀如同七隻浮身海面的鯨魚（鯤即鯨魚、大魚之意）故得名「鯤鯓」。因此將本地沙洲景觀、結合當地傳統「王爺信仰」，並以獨特的「鹽」文化作為活動主題，辦理「鯤鯓王平安鹽祭」，活動內容包含請鹽儀式、祈福法會、開幕儀式、平安鹽袋發放、博杯挑戰賽、伴手禮展售、中英文免費廟宇導覽解說、返本還鹽儀式等。藉由此活動讓國內外的遊客更了解臺灣當地民俗信仰、鹽業文化。",
+    "Location": "臺南市 北門區",
+    "Address": "南鯤鯓代天府",
+    "Organizer": "雲嘉南濱海國家風景區管理處",
+    "StartTime": "2022-10-01T00:00:00+08:00",
+    "EndTime": "2022-11-30T00:00:00+08:00",
+    "Cycle": "2022年時間未定",
+    "Picture": {
+      "PictureUrl1": "https://www.taiwan.net.tw/att/event/f90d0919-6d48-4e2d-85e0-d791665ef36e.jpg",
+      "PictureDescription1": "鯤鯓王平安鹽祭",
+      "PictureUrl2": "https://www.taiwan.net.tw/att/event/221a9c31-81db-448a-9a77-ed04e9659592.jpg",
+      "PictureDescription2": "請鹽儀式",
+      "PictureUrl3": "https://www.taiwan.net.tw/att/event/adeed9ba-9cde-4ded-84b8-4c0de0cd2cb9.jpg",
+      "PictureDescription3": "博杯挑戰賽"
+    },
+    "Position": {
+      "PositionLon": 120.14313507080078,
+      "PositionLat": 23.28608512878418,
+      "GeoHash": "wsjkmzje3"
+    },
+    "Class1": "節慶活動",
+    "Class2": "藝文活動",
+    "City": "臺南市",
+    "SrcUpdateTime": "2022-02-17T01:13:08+08:00",
+    "UpdateTime": "2022-02-17T02:04:29+08:00"
+  },
+  {
+    "ActivityID": "C2_315080000H_502053",
+    "ActivityName": "2022年歲次（壬寅）新春元宵嘉年華、宗教民俗文化系列活動",
+    "Description": "正統鹿耳門聖母廟每年於春節期間所舉辦為期1個月之民俗文化系列活動，活動規劃結合宗教民俗活動、技藝年貨大街、藝文表演、蜂炮煙火及國際高空煙火秀等活動，藉以帶動地方小鎮觀光，活絡地方產業，整體活動對於地方宗教文化觀光特色之營造與轄區內旅遊活動之推廣具正面意義。",
+    "Particpation": "不限",
+    "Location": "臺南正統鹿耳門聖母廟",
+    "Address": "臺南市安南區城安路160號",
+    "Phone": "886-6-7831428",
+    "Organizer": "正統鹿耳門聖母廟管理委員會",
+    "StartTime": "2022-02-01T08:00:00+08:00",
+    "EndTime": "2022-03-02T18:00:00+08:00",
+    "Picture": {},
+    "Position": {
+      "PositionLon": 120.1272964477539,
+      "PositionLat": 23.066831588745117,
+      "GeoHash": "wsj7jx4n0"
+    },
+    "Class1": "節慶活動",
+    "TravelInfo": "大眾運輸：藍24、藍25、11號、台灣好行99台江線開車：由國1或國3，轉國8西向往台南安南區，再接台江大道往西",
+    "ParkingInfo": "廟方備有停車場",
+    "Charge": "無",
+    "City": "臺南市",
+    "SrcUpdateTime": "2022-02-17T01:13:08+08:00",
+    "UpdateTime": "2022-02-17T02:04:29+08:00"
+  },
+  {
+    "ActivityID": "C2_315080000H_502060",
+    "ActivityName": "臺南市普濟殿2022 第十屆府城普濟燈會活動",
+    "Description": "二○一三年始，「府城普濟燈會」於年節期間，為離鄉的遊子、往來的旅人，藉由點亮一顆顆彩繪燈籠，營造一處「有光」的回家感受──這些一道道盞亮的光，有人，也有情──這十年來，從廟口，到國華街，延伸至普濟七角頭區域，並和藝術空間、公益組織、友境廟宇、醫療單位積極合作，更是逐步走出國際，參與日本「台灣祭」的展出，讓世界看見台灣、關注台南的創生軟實力，卻也沒有因此忘記，年年舉辦的在地核心宗旨。然而二○一九年年底，新型冠狀病毒迅速席捲全球，在全民防疫考量下，肩負社會責任的認知，二○二○年第九屆「府城普濟燈會」首次決議臨時喊咔。二○二一年五月，全台無預警地進入第二級警戒，嚴峻疫情之下，日常成為了非常時期，連帶台南的街道地景也產生改變，有些店家在凜寒景氣中戮力支撐；有些店家則不堪虧損，另謀出路。即便在防疫有成的情況下，降為第三級警戒，全民仍須耗盡九牛二虎之力，讓生活恢復正常軌道的同時，還得面對變種病毒的潛伏威脅。欣逢十週年，本來計劃於東京的東京塔下擴大燈會展出，也因疫情關係而無法成行，但我們還是排除困難將燈籠空運至日本，於日前12/3-1/16已在東京塔台湾祭提前登場，雖然協會人員無法前行參與宣傳，但對臺南城市行銷無疑又邁進一個新的里程。因此屆滿十年的里程碑，面對嚴苛條件的再三思索，深覺在時代的風雨裡，「府城普濟燈會」能傳遞的，是盞亮人心的溫暖、振興地方的力量，並給予最誠摯的新年祝福。今年，以「普濟拾光。虎哩幸福」為主題，除了原有靜態的彩繪燈籠展覽外，更增設「祈福燈宮」的動態互動，透過廟宇空間「入龍喉、出虎口」的觀念設計，讓賞燈民眾在一進一出之後，能脫去厄運，在燈籠映照希望之下，帶來新年好運，讓這場民間自籌自辦的活動，增添更溫暖的詮釋，祈願在台灣的每個人，安居樂業，好好生活。",
+    "Location": "普濟殿廟埕、國華街三段",
+    "Address": "臺南市中西區普濟街79號、臺南市中西區民族路至郡緯街間路段",
+    "Phone": "886-6-2619577",
+    "Organizer": "社團法人臺南市普濟文史研究協會",
+    "StartTime": "2022-02-12T19:00:00+08:00",
+    "EndTime": "2022-02-27T17:00:00+08:00",
+    "Picture": {
+      "PictureUrl1": "https://drive.google.com/drive/folders/1U-8_hagtUneV5KZaIagWImEtMgdFTn3J?usp=sharing"
+    },
+    "Position": {
+      "PositionLon": 120.1990737915039,
+      "PositionLat": 22.99881935119629,
+      "GeoHash": "wsj6z4y3c"
+    },
+    "Class1": "節慶活動",
+    "Class2": "藝文活動",
+    "City": "臺南市",
+    "SrcUpdateTime": "2022-02-17T01:13:08+08:00",
+    "UpdateTime": "2022-02-17T02:04:29+08:00"
+  },
+  {
+    "ActivityID": "C2_315081600H_001529",
+    "ActivityName": "2021一見雙雕藝術季活動",
+    "Description": "無",
+    "Location": "to see the official site",
+    "Address": "臺南市724七股區鹽埕里66號",
+    "Phone": "886-6-7861000",
+    "Organizer": "雲嘉南濱海國家風景區管理處",
+    "StartTime": "2021-08-11T00:00:00+08:00",
+    "EndTime": "2021-10-11T23:59:59+08:00",
+    "WebsiteUrl": "https://swcoast-nsa.travel/zh-tw/event-calendar/details/1529",
+    "Picture": {},
+    "Position": {
+      "PositionLon": 120.0999984741211,
+      "PositionLat": 23.154130935668945,
+      "GeoHash": "wsj7szn4s"
+    },
+    "Class1": "年度活動",
+    "City": "臺南市",
+    "SrcUpdateTime": "2022-02-17T01:13:08+08:00",
+    "UpdateTime": "2022-02-17T02:04:29+08:00"
+  },
+  {
+    "ActivityID": "C2_315081600H_001530",
+    "ActivityName": "2021極點慢旅",
+    "Description": "無",
+    "Location": "to see the official site",
+    "Address": "臺南市724七股區鹽埕里鹽埕102-8號",
+    "Phone": "886-6-7861000",
+    "Organizer": "雲嘉南濱海國家風景區管理處",
+    "StartTime": "2021-09-25T00:00:00+08:00",
+    "EndTime": "2021-10-17T23:59:59+08:00",
+    "WebsiteUrl": "https://swcoast-nsa.travel/zh-tw/event-calendar/details/1530",
+    "Picture": {},
+    "Position": {
+      "PositionLon": 120.10308837890625,
+      "PositionLat": 23.153959274291992,
+      "GeoHash": "wsj7tp03s"
+    },
+    "Class1": "年度活動",
+    "City": "臺南市",
+    "SrcUpdateTime": "2022-02-17T01:13:08+08:00",
+    "UpdateTime": "2022-02-17T02:04:29+08:00"
+  },
+  {
+    "ActivityID": "C2_315081600H_001531",
+    "ActivityName": "2021臺灣觀鳥馬拉松",
+    "Description": "無",
+    "Location": "to see the official site",
+    "Address": "臺南市727北門區",
+    "Phone": "886-6-7861000",
+    "Organizer": "雲嘉南濱海國家風景區管理處",
+    "StartTime": "2021-11-27T10:30:00+08:00",
+    "EndTime": "2021-11-28T10:30:00+08:00",
+    "WebsiteUrl": "https://swcoast-nsa.travel/zh-tw/event-calendar/details/1531",
+    "Picture": {},
+    "Position": {
+      "PositionLon": 120.12420654296875,
+      "PositionLat": 23.268770217895508,
+      "GeoHash": "wsjkm7zy2"
+    },
+    "Class1": "年度活動",
+    "City": "臺南市",
+    "SrcUpdateTime": "2022-02-17T01:13:08+08:00",
+    "UpdateTime": "2022-02-17T02:04:29+08:00"
+  },
+  {
+    "ActivityID": "C2_315081600H_001536",
+    "ActivityName": "2021台灣燈會副燈「犢站金榜」及「懷舊時光燈區」燈藝作品移至台南北門經典小鎮",
+    "Description": "無",
+    "Location": "to see the official site",
+    "Address": "臺南市727北門區北門里舊埕200號",
+    "Phone": "886-6-7861000",
+    "Organizer": "雲嘉南濱海國家風景區管理處",
+    "StartTime": "2021-02-26T18:00:00+08:00",
+    "EndTime": "2021-04-05T21:00:00+08:00",
+    "WebsiteUrl": "https://theme.taiwan.net.tw/2021taiwanlantern/news/0000018.html",
+    "Picture": {},
+    "Position": {
+      "PositionLon": 120.12397003173828,
+      "PositionLat": 23.26715087890625,
+      "GeoHash": "wsjkm7xsg"
+    },
+    "Class1": "年度活動",
+    "City": "臺南市",
+    "SrcUpdateTime": "2022-02-17T01:13:08+08:00",
+    "UpdateTime": "2022-02-17T02:04:29+08:00"
+  },
+  {
+    "ActivityID": "C2_315081700H_000020",
+    "ActivityName": "梅嶺梅花季",
+    "Description": "無",
+    "Location": "to see the official site",
+    "Address": "臺南市715楠西區梅嶺風景區",
+    "Phone": "886-6-7861000",
+    "Organizer": "西拉雅國家風景區管理處",
+    "StartTime": "2020-12-01T00:00:00+08:00",
+    "EndTime": "2021-02-28T23:59:59+08:00",
+    "Picture": {},
+    "Position": {
+      "PositionLon": 120.55879974365234,
+      "PositionLat": 23.18143081665039,
+      "GeoHash": "wsjezkh1x"
+    },
+    "Class1": "年度活動",
+    "City": "臺南市",
+    "SrcUpdateTime": "2022-02-17T01:13:08+08:00",
+    "UpdateTime": "2022-02-17T02:04:29+08:00"
+  },
+  {
+    "ActivityID": "C2_315081700H_004088",
+    "ActivityName": "2021臺南楠西梅嶺賞螢季",
+    "Description": "無",
+    "Location": "to see the official site",
+    "Address": "臺南市715楠西區",
+    "Phone": "886-6-7861000",
+    "Organizer": "西拉雅國家風景區管理處",
+    "StartTime": "2021-04-24T00:00:00+08:00",
+    "EndTime": "2021-05-09T23:59:59+08:00",
+    "Picture": {},
+    "Position": {
+      "PositionLon": 120.56105041503906,
+      "PositionLat": 23.186800003051758,
+      "GeoHash": "wsjezmjbu"
+    },
+    "Class1": "年度活動",
+    "City": "臺南市",
+    "SrcUpdateTime": "2022-02-17T01:13:08+08:00",
+    "UpdateTime": "2022-02-17T02:04:29+08:00"
+  },
+  {
+    "ActivityID": "C2_315081700H_004092",
+    "ActivityName": "官田菱角季",
+    "Description": "無",
+    "Location": "to see the official site",
+    "Address": "臺南市720官田區官田體育公園",
+    "Phone": "886-6-7861000",
+    "Organizer": "西拉雅國家風景區管理處",
+    "StartTime": "2021-10-23T09:00:00+08:00",
+    "EndTime": "2021-10-23T15:00:00+08:00",
+    "Picture": {},
+    "Position": {
+      "PositionLon": 120.31436157226562,
+      "PositionLat": 23.1904296875,
+      "GeoHash": "wsjecvdnp"
+    },
+    "Class1": "年度活動",
+    "City": "臺南市",
+    "SrcUpdateTime": "2022-02-17T01:13:08+08:00",
+    "UpdateTime": "2022-02-17T02:04:29+08:00"
+  },
+  {
+    "ActivityID": "C2_315081700H_004093",
+    "ActivityName": "2021白河蓮花季",
+    "Description": "無",
+    "Location": "to see the official site",
+    "Address": "臺南市732白河區白河蓮花公園",
+    "Phone": "886-6-7861000",
+    "Organizer": "西拉雅國家風景區管理處",
+    "StartTime": "2021-05-01T00:00:00+08:00",
+    "EndTime": "2021-07-31T23:59:59+08:00",
+    "Picture": {},
+    "Position": {
+      "PositionLon": 120.41767120361328,
+      "PositionLat": 23.38751983642578,
+      "GeoHash": "wsjth1t6p"
+    },
+    "Class1": "年度活動",
+    "City": "臺南市",
+    "SrcUpdateTime": "2022-02-17T01:13:08+08:00",
+    "UpdateTime": "2022-02-17T02:04:29+08:00"
+  },
+  {
+    "ActivityID": "C2_315081700H_005132",
+    "ActivityName": "白河木棉花季",
+    "Description": "無",
+    "Location": "to see the official site",
+    "Address": "臺南市732白河區林初埤木棉花道",
+    "Phone": "886-6-7861000",
+    "Organizer": "西拉雅國家風景區管理處",
+    "StartTime": "2021-02-20T00:00:00+08:00",
+    "EndTime": "2021-03-21T23:59:59+08:00",
+    "Picture": {},
+    "Position": {
+      "PositionLon": 120.40994262695312,
+      "PositionLat": 23.37812042236328,
+      "GeoHash": "wsjsgzzg7"
+    },
+    "Class1": "年度活動",
+    "City": "臺南市",
+    "SrcUpdateTime": "2022-02-17T01:13:08+08:00",
+    "UpdateTime": "2022-02-17T02:04:29+08:00"
+  },
+  {
+    "ActivityID": "C2_315081700H_007160",
+    "ActivityName": "百年圳流-嘉南大圳開工滿百紀念活動",
+    "Description": "無",
+    "Location": "to see the official site",
+    "Address": "臺南市720官田區嘉南里66號",
+    "Phone": "886-6-7861000",
+    "Organizer": "西拉雅國家風景區管理處",
+    "StartTime": "2021-05-08T14:00:00+08:00",
+    "EndTime": "2021-05-08T18:00:00+08:00",
+    "Picture": {},
+    "Position": {
+      "PositionLon": 120.36480712890625,
+      "PositionLat": 23.213930130004883,
+      "GeoHash": "wsjs4cyyz"
+    },
+    "Class1": "年度活動",
+    "City": "臺南市",
+    "SrcUpdateTime": "2022-02-17T01:13:08+08:00",
+    "UpdateTime": "2022-02-17T02:04:29+08:00"
+  },
+  {
+    "ActivityID": "C2_315081700H_008215",
+    "ActivityName": "2021西拉雅玩水酷-水庫騎跡自行車系列活動",
+    "Description": "無",
+    "Location": "to see the official site",
+    "Address": "臺南市720官田區福田路99號",
+    "Phone": "886-6-7861000",
+    "Organizer": "西拉雅國家風景區管理處",
+    "StartTime": "2021-10-02T07:00:00+08:00",
+    "EndTime": "2021-10-02T18:30:00+08:00",
+    "Picture": {},
+    "Position": {
+      "PositionLon": 120.33621215820312,
+      "PositionLat": 23.18852996826172,
+      "GeoHash": "wsjefm64u"
+    },
+    "Class1": "年度活動",
+    "City": "臺南市",
+    "SrcUpdateTime": "2022-02-17T01:13:08+08:00",
+    "UpdateTime": "2022-02-17T02:04:29+08:00"
+  },
+  {
+    "ActivityID": "C2_315081700H_008218",
+    "ActivityName": "2021蝴蝶遊樂園",
+    "Description": "無",
+    "Location": "to see the official site",
+    "Address": "臺南市732白河區關子嶺紅葉公園",
+    "Phone": "886-6-7861000",
+    "Organizer": "西拉雅國家風景區管理處",
+    "StartTime": "2021-08-14T00:00:00+08:00",
+    "EndTime": "2021-09-12T23:59:59+08:00",
+    "Picture": {},
+    "Position": {
+      "PositionLon": 120.50572204589844,
+      "PositionLat": 23.34214973449707,
+      "GeoHash": "wsjsy1m9f"
+    },
+    "Class1": "年度活動",
+    "City": "臺南市",
+    "SrcUpdateTime": "2022-02-17T01:13:08+08:00",
+    "UpdateTime": "2022-02-17T02:04:29+08:00"
+  },
+  {
+    "ActivityID": "C2_315081700H_008222",
+    "ActivityName": "關子嶺火王爺山車巡行",
+    "Description": "無",
+    "Location": "to see the official site",
+    "Address": "臺南市732白河區關子嶺風景區",
+    "Phone": "886-6-7861000",
+    "Organizer": "西拉雅國家風景區管理處",
+    "StartTime": "2021-09-10T13:00:00+08:00",
+    "EndTime": "2021-09-10T16:00:00+08:00",
+    "Picture": {},
+    "Position": {
+      "PositionLon": 120.50556945800781,
+      "PositionLat": 23.3376407623291,
+      "GeoHash": "wsjsy0mrx"
+    },
+    "Class1": "年度活動",
+    "City": "臺南市",
+    "SrcUpdateTime": "2022-02-17T01:13:08+08:00",
+    "UpdateTime": "2022-02-17T02:04:29+08:00"
+  },
+  {
+    "ActivityID": "C2_315081700H_008223",
+    "ActivityName": "西拉雅吃冰節",
+    "Description": "無",
+    "Location": "to see the official site",
+    "Address": "臺南市714玉井區",
+    "Phone": "886-6-7861000",
+    "Organizer": "西拉雅國家風景區管理處",
+    "StartTime": "2021-08-28T10:00:00+08:00",
+    "EndTime": "2021-08-28T15:00:00+08:00",
+    "Picture": {},
+    "Position": {
+      "PositionLon": 120.46047973632812,
+      "PositionLat": 23.12409019470215,
+      "GeoHash": "wsjet1ses"
+    },
+    "Class1": "年度活動",
+    "City": "臺南市",
+    "SrcUpdateTime": "2022-02-17T01:13:08+08:00",
+    "UpdateTime": "2022-02-17T02:04:29+08:00"
+  },
+  {
+    "ActivityID": "C2_315081700H_008227",
+    "ActivityName": "二寮曙光雲海音樂會",
+    "Description": "無",
+    "Location": "to see the official site",
+    "Address": "臺南市713左鎮區",
+    "Phone": "886-6-7861000",
+    "Organizer": "西拉雅國家風景區管理處",
+    "StartTime": "2021-10-03T04:30:00+08:00",
+    "EndTime": "2021-10-03T06:00:00+08:00",
+    "Picture": {},
+    "Position": {
+      "PositionLon": 120.41034698486328,
+      "PositionLat": 22.995399475097656,
+      "GeoHash": "wsjdu40ju"
+    },
+    "Class1": "年度活動",
+    "City": "臺南市",
+    "SrcUpdateTime": "2022-02-17T01:13:08+08:00",
+    "UpdateTime": "2022-02-17T02:04:29+08:00"
+  },
+  {
+    "ActivityID": "C2_315081700H_008277",
+    "ActivityName": "2021西拉雅趣飛車-小小飛車暖身賽",
+    "Description": "無",
+    "Location": "to see the official site",
+    "Address": "臺南市720官田區福田里福田路99號",
+    "Phone": "886-6-7861000",
+    "Organizer": "西拉雅國家風景區管理處",
+    "StartTime": "2021-11-20T10:00:00+08:00",
+    "EndTime": "2021-11-20T15:00:00+08:00",
+    "Picture": {},
+    "Position": {
+      "PositionLon": 120.33621215820312,
+      "PositionLat": 23.18852996826172,
+      "GeoHash": "wsjefm64u"
+    },
+    "Class1": "年度活動",
+    "City": "臺南市",
+    "SrcUpdateTime": "2022-02-17T01:13:08+08:00",
+    "UpdateTime": "2022-02-17T02:04:29+08:00"
+  },
+  {
+    "ActivityID": "C2_315081700H_011334",
+    "ActivityName": "白河蓮花季",
+    "Description": "無",
+    "Location": "to see the official site",
+    "Address": "臺南市732白河區白河蓮花公園",
+    "Phone": "886-6-7861000",
+    "Organizer": "西拉雅國家風景區管理處",
+    "StartTime": "2022-05-01T00:00:00+08:00",
+    "EndTime": "2022-07-31T23:59:59+08:00",
+    "Picture": {},
+    "Position": {
+      "PositionLon": 120.41767120361328,
+      "PositionLat": 23.38751983642578,
+      "GeoHash": "wsjth1t6p"
+    },
+    "Class1": "年度活動",
+    "City": "臺南市",
+    "SrcUpdateTime": "2022-02-17T01:13:08+08:00",
+    "UpdateTime": "2022-02-17T02:04:29+08:00"
+  },
+  {
+    "ActivityID": "C2_315081700H_011335",
+    "ActivityName": "臺南楠西梅嶺賞螢季",
+    "Description": "無",
+    "Location": "to see the official site",
+    "Address": "臺南市715楠西區伍龍步道",
+    "Phone": "886-6-7861000",
+    "Organizer": "西拉雅國家風景區管理處",
+    "StartTime": "2022-04-01T00:00:00+08:00",
+    "EndTime": "2022-05-31T23:59:59+08:00",
+    "Picture": {},
+    "Position": {
+      "PositionLon": 120.56105041503906,
+      "PositionLat": 23.186800003051758,
+      "GeoHash": "wsjezmjbu"
+    },
+    "Class1": "年度活動",
+    "City": "臺南市",
+    "SrcUpdateTime": "2022-02-17T01:13:08+08:00",
+    "UpdateTime": "2022-02-17T02:04:29+08:00"
+  },
+  {
+    "ActivityID": "C2_315081700H_011336",
+    "ActivityName": "白河木棉花季",
+    "Description": "無",
+    "Location": "to see the official site",
+    "Address": "臺南市732白河區林初埤木棉花道",
+    "Phone": "886-6-7861000",
+    "Organizer": "西拉雅國家風景區管理處",
+    "StartTime": "2022-03-01T00:00:00+08:00",
+    "EndTime": "2022-03-31T23:59:59+08:00",
+    "Picture": {},
+    "Position": {
+      "PositionLon": 120.40994262695312,
+      "PositionLat": 23.37812042236328,
+      "GeoHash": "wsjsgzzg7"
+    },
+    "Class1": "年度活動",
+    "City": "臺南市",
+    "SrcUpdateTime": "2022-02-17T01:13:08+08:00",
+    "UpdateTime": "2022-02-17T02:04:29+08:00"
+  },
+  {
+    "ActivityID": "C2_395000000A_002550",
+    "ActivityName": "2022臺灣國際蘭展",
+    "Description": "✾2022臺灣國際蘭展✾在疫情的肆虐下，人心浮動，社會氣氛低糜，目前雖已逐步回復正軌，但巨大的傷痛及恐懼仍存在。為了帶給社會正能量，本次主題館特別規劃以撫慰人心的蘭花結合耳熟能詳的奇幻童話故事，帶領大家進入奇幻的花花世界，同時也藉由故事中的寓意，體悟保持良善之心，用愛的力量勇往直前，終能獲得良好的果實。冀望透過共同的努力，成為彼此安定的力量。本次以美麗的香筴蘭化身為可愛的蘭朋友，活潑的她將前往夢中的奇幻世界，進行一連串的冒險。在奇幻世界中，化身人魚悠游於海底的水中世界，在叢林瀑布裡追逐著青蛙與昆蟲，有時跑到荒島上打擊惡鬼，有時來到沙漠中的綠洲與神燈巨人同行，餓了還能品嚐糖果屋及薑餅屋的美味，累了乘坐南瓜馬車穿著美麗的玻璃鞋來到夢幻城堡與王子共舞。▋展覽資訊 ▋展覽地點▸臺灣蘭花生物科技園區（臺南市後壁區長安里烏樹林325號）展覽時間▸111年3月26日至4月5日)▋門票資訊 ▋詳細資訊，請見活動官網購票資訊之頁面。▋蘭展月好康─自由行旅遊優惠活動 ▋✾為行銷推廣2022臺灣國際蘭展，特別蒐集蘭展月好康─自由行旅遊優惠店家，包含「食」、「住」、「行」、「育樂」之觀光產業相關業者，提供優惠方案。優惠期間：111/03/25~04/06 (為展覽期間前後各1日)優惠方式：憑蘭展門票或購票證明(如票券樣式圖請下載)享優惠(實際優惠內容依店家現場公布為準)優惠店家名單：                                                          2022臺灣國際蘭展 「蘭展月好康自由行旅遊優惠」─旅宿優惠方案                            優惠期間：111/03/25~04/06 (為展覽期間前後各1日)                    優惠方式：優惠內容依店家現場公布為準                            編號                業者名稱(官網請點選)                訂房電話                地址                優惠內...",
+    "Location": "詳見官網",
+    "Phone": "886-6-6353226",
+    "Organizer": "社團法人台灣蘭花產銷發展協會",
+    "StartTime": "2022-03-26T00:00:00+08:00",
+    "EndTime": "2022-04-05T00:00:00+08:00",
+    "Picture": {},
+    "Position": {
+      "PositionLon": 120.18280792236328,
+      "PositionLat": 22.99165916442871,
+      "GeoHash": "wsj6ycd2n"
+    },
+    "Class1": "年度活動",
+    "City": "臺南市",
+    "SrcUpdateTime": "2022-02-17T01:13:08+08:00",
+    "UpdateTime": "2022-02-17T02:04:29+08:00"
+  },
+  {
+    "ActivityID": "C2_395000000A_004589",
+    "ActivityName": "振興五倍券臺南住宿買一晚送一晚",
+    "Description": "「振興五倍券臺南住宿買一晚送一晚」行銷活動名單旅館序號旅宿名稱旅宿地址聯絡電話1臺南趣淘漫旅臺南市楠西區密枝里密枝102-5號06-57533332臺南大員皇冠假日酒店臺南市安平區州平路289號06-39118993台糖長榮酒店（臺南）臺南市東區中華東路三段336巷1號06-28999884臺南大飯店臺南市中西區成功路1號06-22891015臺南遠東香格里拉飯店臺南市東區大學路西段89號06-70288886添福商務旅館臺南市新營區中山路47，51號06-63241657關子嶺大旅社臺南市白河區關嶺里關子嶺路20號06-68223218榮美金鬱金香酒店臺南市北區安民里海安路3段50號06-22003669宏盛鑫商務飯店臺南市東區崇明路239號06-335088810榮興金鬱金香酒店臺南市中西區民族路二段128號06-220836611府城窩旅Tainan Wow臺南市北區成功路114號6樓06-222689012傑克堡旅舘臺南市北區民德路58巷106號096651577113臺南劍橋大飯店臺南市中西區民族路二段271號06-220225514劍橋大飯店 永康館臺南市永康區新行街128號06-242666615月見溪行館臺南市南區健康路一段113巷65弄20號06-215721816府城商旅臺南市東區榮譽街292號06-290538817吉村大飯店臺南市永康區中山南路460號06-201263618臺南富信大飯店臺南市北區成功路336號06-222980119煙波大飯店臺南館臺南市中西區永福路1段269號06-215600020維悅酒店臺南市安平區慶平路539號06-295088821臺南老爺行旅臺南市東區中華東路一段368號06-236616822OINN Hotel & Hostel巷弄輕旅臺南市中西區文和街29號06-350110123古根文旅臺南市中西區友愛街148號06-221228824青舍商旅臺南市中西區和平街99號06-223369325夏都城旅安平館臺南市南區新建路47號06-265309926蒙娜麗莎商務旅館臺南市北區臨安路2段219號06-3586...",
+    "Location": "詳見官網",
+    "Phone": "886-6-6353226",
+    "Organizer": "臺南市政府",
+    "StartTime": "2021-10-07T00:00:00+08:00",
+    "EndTime": "2022-04-30T23:59:59+08:00",
+    "Picture": {},
+    "Position": {
+      "PositionLon": 120.18280792236328,
+      "PositionLat": 22.99165916442871,
+      "GeoHash": "wsj6ycd2n"
+    },
+    "Class1": "年度活動",
+    "City": "臺南市",
+    "SrcUpdateTime": "2022-02-17T01:13:08+08:00",
+    "UpdateTime": "2022-02-17T02:04:29+08:00"
+  },
+  {
+    "ActivityID": "C2_395000000A_004604",
+    "ActivityName": "台南好停雙重禮，智慧電車送給你",
+    "Description": "►即日起至111年12月31日期間之本市路邊及路外公有公營（人工開單）停車單，登入「臺南好停」APP會員並使用APP線上支付停車費，每筆折扣2元優惠。►活動期間內使用以下方式繳納本市公有停車費可抽宏佳騰智慧電車(市價84,800元)及禮券等好禮：１、加入「臺南好停」APP會員並使用專屬APP線上繳納本市路邊停車場（含本局人工開單之路外停車場）停車費，每筆停車繳費即可獲得一次抽獎機會，停越多次中獎機會越高。２、於臺南市公有委外停車場(共計41場)停車並繳納停車費，持該繳費發票於本活動表單（https://forms.gle/axqmTxd3Pi3MpS9R7）登錄參加者相關資料，即可參加抽獎。►本活動於111年2月21日抽出得獎者，得獎名單將於翌日公佈於本活動網頁及本局最新消息頁面。►活動詳情請至本活動網頁查詢：http://citypark.tainan.gov.tw/tw/activity_2021.aspx。",
+    "Location": "詳見官網",
+    "Phone": "886-6-6353226",
+    "Organizer": "臺南市政府交通局",
+    "StartTime": "2021-10-13T00:00:00+08:00",
+    "EndTime": "2022-12-31T23:59:59+08:00",
+    "Picture": {},
+    "Position": {
+      "PositionLon": 120.18280792236328,
+      "PositionLat": 22.99165916442871,
+      "GeoHash": "wsj6ycd2n"
+    },
+    "Class1": "年度活動",
+    "City": "臺南市",
+    "SrcUpdateTime": "2022-02-17T01:13:08+08:00",
+    "UpdateTime": "2022-02-17T02:04:29+08:00"
+  }
+]

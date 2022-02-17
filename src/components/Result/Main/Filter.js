@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 import { fontLayout } from "../../../constants/api";
+import { SortingDropdown } from "../../../stories/mine/Dropdown";
+import { SORTING_FILTER_LIST } from "../../../constants/common";
 
 const Container = styled.div`
   width: 100%;
@@ -24,31 +26,16 @@ const Label = styled.label`
   ${ ({ theme }) => fontLayout('Noto Sans TC', 'normal', '500', '1.2rem', '1.7rem', theme.palette.neutral.little) }
 `;
 
-const SortingDropdown = styled.div`
+const SortingFilterBox = styled.div`
   width: 100%;
   height: 7.9rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   margin-top: 2.4rem;
-
-  div {
-    width: 100%;
-    height: 4.5rem;
-    display: flex;
-    align-items: center;
-    border: .05rem solid ${ ({ theme }) => theme.palette.neutral.main };
-    border-radius: .5rem;
-    padding: 0 2.4rem;
-
-    span {
-      letter-spacing: 0.1em;
-      ${ ({ theme }) => fontLayout('Noto Sans TC', 'normal', 'normal', '1.4rem', '2rem', theme.palette.neutral.main) }
-    }
-  }
 `;
 
-const ServiceFilter = styled.div`
+const ServiceFilterBox = styled.div`
   width: 100%;
   height: auto;
   display: flex;
@@ -56,11 +43,50 @@ const ServiceFilter = styled.div`
   gap: 1.6rem;
   margin-top: 3.2rem;
 
-  ul {
-    letter-spacing: 0.05em;
-    ${ ({ theme }) => fontLayout('Noto Sans TC', 'normal', 'normal', '1.4rem', '2rem', theme.palette.neutral.main) }
+  div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+  }
+`;
 
-    li {
+const ServiceFilterOption = styled.label`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  letter-spacing: 0.05em;
+  ${ ({ theme }) => fontLayout('Noto Sans TC', 'normal', 'normal', '1.4rem', '2rem', theme.palette.neutral.main) }
+
+  input[type='checkbox'] {
+    appearance: none;
+    width: 1.8rem;
+    height: 1.8rem;
+    display: grid;
+    place-content: center;
+    border: .1rem solid ${ ({ theme }) => theme.palette.neutral.main };
+    border-radius: .2rem;
+    margin: 0;
+
+    &::before {
+      content: "";
+      width: 0.75em;
+      height: 0.75em;
+      transform: scale(0);
+      transition: 120ms transform ease-in-out;
+      box-shadow: inset 1em 1em #663399;
+      background-color: ${ ({ theme }) => theme.palette.white };
+      transform-origin: bottom left;
+      clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    }
+    &:checked {
+      background-color: ${ ({ theme }) => theme.palette.primary.main };
+      border: 0;
+      &::before {
+        transform: scale(1);
+      }
     }
   }
 `;
@@ -89,9 +115,21 @@ const ThemeCategory = styled.div`
 
       letter-spacing: 0.05em;
       ${ ({ theme }) => fontLayout('Noto Sans TC', 'normal', 'normal', '1.4rem', '2rem', theme.palette.neutral.main) }
+
+      &:hover {
+        color: ${ ({ theme }) => theme.palette.primary.main };
+        border-color: ${ ({ theme }) => theme.palette.primary.main };
+      }
+      &:focus {
+        color: ${ ({ theme }) => theme.palette.white };
+        border-color: ${ ({ theme }) => theme.palette.primary.main };
+        background-color: ${ ({ theme }) => theme.palette.primary.main };
+      }
     }
   }
 `;
+
+
 
 const Filter = props => {
   return (
@@ -99,19 +137,38 @@ const Filter = props => {
       <SearchCount>
         共有<span>105</span>筆搜尋結果
       </SearchCount>
-      <SortingDropdown>
+      <SortingFilterBox>
         <Label>排序方式</Label>
-        <div>
-          <span>相關結果優先</span>
-        </div>
-      </SortingDropdown>
-      <ServiceFilter>
+        <SortingDropdown
+          FILTER_LIST={ SORTING_FILTER_LIST }
+          width="100%" style={{ height: '4.5rem'}}
+        />
+      </SortingFilterBox>
+      <ServiceFilterBox>
         <Label>服務資訊</Label>
-        <ul>
-          <li>停車場</li>
-          <li>購票資訊</li>
-        </ul>
-      </ServiceFilter>
+        <div>
+          <ServiceFilterOption htmlFor="serviceFilter">
+            停車場
+            <input
+              id="serviceFilter"
+              type="checkbox"
+              name="service-filter"
+              // checked={}
+              onChange={ () => {} }
+            />
+          </ServiceFilterOption>
+          <ServiceFilterOption htmlFor="serviceFilter">
+            購票資訊
+            <input
+              id="serviceFilter"
+              type="checkbox"
+              name="service-filter"
+              // checked={}
+              onChange={ () => {} }
+            />
+          </ServiceFilterOption>
+        </div>
+      </ServiceFilterBox>
       <ThemeCategory>
         <Label>主題類別</Label>
         <div>
