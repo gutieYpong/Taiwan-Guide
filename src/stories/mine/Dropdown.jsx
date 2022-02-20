@@ -16,6 +16,7 @@ const Container = styled.div`
 
   position: relative;
   width: ${ ({ FullWidth }) => FullWidth ? '100%' : 'var(--dropdown-width)' };
+  z-index: 4;
 `;
 
 const AbsoluteBox = styled.div`

@@ -68,9 +68,9 @@ const FooterRight = styled.div`
   }
 `;
 
-const Footer = ({ GridArea }) => {
+const Footer = ({ className, GridArea, ...props }) => {
   return (
-    <Container GridArea={ GridArea }>
+    <Container className={ className } GridArea={ GridArea } {...props}>
       <FooterLeft>
         <p>Follow us</p>
         <FacebookIcon />

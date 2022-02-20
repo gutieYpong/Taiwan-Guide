@@ -61,7 +61,7 @@ const Container = styled.div`
 const App = props => {
   return (
     <ThemeProvider theme={ theme }>
-      <Container className="base-container">
+      <Container className="FOR-RECKON-base-container">
         <BrowserRouter>
           <Routes>
             <Route path="/" element={ <HomePage /> } />

@@ -16,9 +16,10 @@ import { Autoplay, EffectFade, Pagination } from "swiper"; // import required mo
 const Container = styled.div`
   position: relative;
   width: 100%;
-  max-width: 144rem;
+  max-width: 100%;
   height: 100%;
   max-height: 92.4rem;
+  overflow: hidden;
 
   //* Carousel layout
   .swiper {
@@ -26,12 +27,16 @@ const Container = styled.div`
     height: 100%;
 
     .swiper-slide {
-      filter: brightness(75%);
+      width: 100%;
+      height: 100%;
       background-position: center;
       background-size: cover;
+      filter: brightness(75%);
+
       img {
         display: block;
         width: 100%;
+        max-width: 144rem;
         height: 100%;
         object-fit: cover;
       }

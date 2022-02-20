@@ -3,7 +3,7 @@ import { Pagination, Stack, Skeleton } from '@mui/material';
 import { isEmpty } from "lodash";
 
 import { fontLayout } from "../../../constants/api";
-import { HeartOutlineIcon, GPSIcon, MissingSpotImg } from "../../../assets";
+import { HeartOutlineIcon, GPSIcon, MissingSpotImg, MissingRestaurantImg, MissingActivityImg } from "../../../assets";
 import { HeartIcon } from "../../../constants/svg";
 
 export const CardContainer = styled.div`
@@ -28,7 +28,7 @@ export const CardContainer = styled.div`
       top: 50%;
       left: 50%;
       transform: translateX(-50%) translateY(-50%);
-      z-index: 999;
+      z-index: 2;
       text-shadow: .2rem .2rem .2rem rgba(0, 0, 0, 0.6);
       letter-spacing: 0.05em;
       ${ ({ theme }) => fontLayout('Noto Sans TC', 'normal', 'normal', '1.4rem', '2rem', theme.palette.white) }
@@ -37,7 +37,7 @@ export const CardContainer = styled.div`
       position: absolute;
       top: 1.2rem;
       right: 1.2rem;
-      z-index: 999;
+      z-index: 3;
       &:hover {
         transform: scale(1);
       }
@@ -89,7 +89,8 @@ export const CardContainer = styled.div`
   }
 `;
 
-export const Card = ({ Item, Theme }) => {
+export const Card = ({ Item, ItemName, Theme, selectedIdx }) => {
+  const MISSING_IMG_MAP = [MissingSpotImg, MissingRestaurantImg, MissingActivityImg];
   const isMissing = isEmpty( Item.Picture );
   return (
     <CardContainer IsMissing={ isMissing }>
@@ -100,10 +101,10 @@ export const Card = ({ Item, Theme }) => {
           StrokeColor={ Theme.palette.white }
           // style={{ filter: 'brightness(85%)' }}
         />
-        <img className="image" src={ isMissing ? MissingSpotImg : Item.Picture.PictureUrl1 } alt={ isMissing ? Item.ScenicSpotName : Item.Picture.PictureDescription1 } />
+        <img className="image" src={ isMissing ? MISSING_IMG_MAP[selectedIdx] : Item.Picture.PictureUrl1 } alt={ isMissing ? ItemName : Item.Picture.PictureDescription1 } />
       </div>
       <div className="content-card--desc">
-        <p className="content-card--title">{ Item.ScenicSpotName }</p>
+        <p className="content-card--title">{ ItemName }</p>
         <div className="content-card--location">
           <GPSIcon />
           <span>{ Item.City }</span>

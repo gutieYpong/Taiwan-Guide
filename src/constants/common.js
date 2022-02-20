@@ -182,3 +182,23 @@ export const ENJOY_LIST = [
 
 export const SORTING_FILTER_LIST = ['相關結果優先', '最新結果優先', '最舊結果優先'];
 export const CITY_LIST = ['台北市', '新北市', '桃園市', '基隆市', '新竹市', '台中市'];
+export const SPOT_FILTER_LIST = ['文化類', '觀光工廠類', '自然風景類', '生態類', '遊憩類', '其他', '廟宇類', '體育健身類', '休閒農業類', '溫泉類', '古蹟類', '藝術類', '國家風景區類', '都會公園類', '林場類', '國家公園類', '小吃/特產類', '森林遊樂區類', 'null'];
+export const DELICACY_FILTER_LIST = ['地方特產', '異國料理', '其他', '中式美食', '夜市小吃', '甜點冰品', '伴手禮', '素食', '火烤料理', 'null'];
+export const ACTIVITY_FILTER_LIST = ['其他', '節慶活動', '年度活動', '四季活動', '自行車活動', '藝文活動', '活動快報', '遊憩活動', '產業文化活動', 'null'];
+export const API_INFO_MAP = [
+  {
+    category: 'ScenicSpot',
+    id_key: 'ScenicSpotID',
+    name_key: 'ScenicSpotName'
+  },
+  {
+    category: 'Restaurant',
+    id_key: 'RestaurantID',
+    name_key: 'RestaurantName'
+  },
+  {
+    category: 'Activity',
+    id_key: 'ActivityID',
+    name_key: 'ActivityName'
+  }
+];

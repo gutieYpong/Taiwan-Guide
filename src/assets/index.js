@@ -82,3 +82,9 @@ export { default as SubscribeImg } from "./image/subscribe.jpeg";
 export { default as MissingSpotImg } from "./image/search_page/missing-attraction.png";
 export { default as MissingRestaurantImg } from "./image/search_page/missing-delicacy.png";
 export { default as MissingActivityImg } from "./image/search_page/missing-activity.png";
+
+/**
+ * ... Error response SVGs ...
+ */
+export { ReactComponent as NoResultSVG } from "./image/search_page/result-not-found.svg";
+export { ReactComponent as WebFailureSVG } from "./image/search_page/website-failure.svg";

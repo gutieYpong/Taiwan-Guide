@@ -35,7 +35,7 @@ const NaviWrapper = styled.div`
 const NaviItem = styled.div`
   grid-column: ${ ({ StartCol, EndCol }) => `${StartCol} / ${EndCol}` };
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 `;
 

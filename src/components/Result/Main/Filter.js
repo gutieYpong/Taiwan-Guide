@@ -1,8 +1,11 @@
+import { useSelector } from 'react-redux';
 import styled from "styled-components";
 
+import { spotInfo } from "../../../features/fetchDataSlice";
 import { fontLayout } from "../../../constants/api";
 import { SortingDropdown } from "../../../stories/mine/Dropdown";
 import { SORTING_FILTER_LIST } from "../../../constants/common";
+
 
 const Container = styled.div`
   width: 100%;
@@ -129,13 +132,13 @@ const ThemeCategory = styled.div`
   }
 `;
 
-
-
 const Filter = props => {
+  const states = useSelector(spotInfo);
+
   return (
     <Container>
       <SearchCount>
-        共有<span>105</span>筆搜尋結果
+        共有<span>{ states.data.length }</span>筆搜尋結果
       </SearchCount>
       <SortingFilterBox>
         <Label>排序方式</Label>

@@ -1,38 +1,97 @@
-import styled from "styled-components";
+// import { useState } from "react";
+import styled, { css } from "styled-components";
 
 import { fontLayout } from "../../constants/api";
 
 
-const Container = styled.div`
-  width: 100%;
-  max-width: 144rem;
-  height: 100%;
-  max-height: 6.2rem;
-  display: flex;
-  justify-content: center;
-  gap: 8rem;
-  background-color: ${ ({ theme }) => theme.palette.white };
-`;
+const Container = styled.div( () => {
+  // How many menu items do we have?
+  const findingMenuItems = 3;
+
+  // Dynamic Variables
+  const basicWidth = ( 100 / findingMenuItems ); // makes each item the right size
+  const menuItemsLoopOffset = findingMenuItems - 1; // the number of items in the menu
+
+  let findingMenuItemCSSLayout = "";
+  for( let i = 1; i <= menuItemsLoopOffset; i++ )
+  {
+    findingMenuItemCSSLayout += `
+    .finding-menu-item:nth-child(${i}).is-active ~ .finding-menu-item:last-child:before {
+      left: ${ basicWidth * i - ( basicWidth / 2 ) }%;
+    }
+    .finding-menu-item:nth-child(${i}):hover ~ .finding-menu-item:last-child:before {
+      left: ${ basicWidth * i - ( basicWidth / 2 ) }% !important;
+    }
+    `
+  }
+
+  return css`
+    position: relative;
+    width: 35%;
+    max-width: 144rem;
+    height: 100%;
+    max-height: 6.2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: ${ ({ theme }) => theme.palette.white };
+
+    ${ findingMenuItemCSSLayout }
+  `;
+});
 
 const CategoryItem = styled.div`
-  width: 9.6rem;
+  --category-item-width: 9.6rem;
+  place-self: center;
+  width: var(--category-item-width);
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  border-bottom: .2rem solid ${ ({ theme }) => theme.palette.primary.main };
+  cursor: pointer;
 
   letter-spacing: 0.1em;
   ${ ({ theme }) => fontLayout('Noto Sans TC', 'normal', '500', '2rem', '2.9rem', theme.palette.primary.main) }
+
+  &:last-child {
+    &::before {
+      position: absolute;
+      content: "";
+      width: var(--category-item-width);
+      height: .2rem;
+      left: 16.65%;
+      bottom: 0;
+      transition: all 1s ease;
+      transform: translateX(-50%);
+      background: ${ ({ theme }) => theme.palette.primary.main };
+    }
+    &:hover, &.is-active {
+      &::before {
+        left: 83.35% !important;
+      }
+    }
+  }
 `;
 
 const Category = props => {
+  const { selectedIdx, setSelectedIdx } = props;
+  
   return (
     <Container>
-      <CategoryItem children="找景點" />
-      <CategoryItem children="找美食" />
-      <CategoryItem children="找活動" />
+      <CategoryItem
+        className={ `finding-menu-item ${ selectedIdx === 0 ? "is-active" : "" }` }
+        children="找景點"
+        onClick={ () => setSelectedIdx(0) }
+      />
+      <CategoryItem
+        className={ `finding-menu-item ${ selectedIdx === 1 ? "is-active" : "" }` }
+        children="找美食"
+        onClick={ () => setSelectedIdx(1) }
+      />
+      <CategoryItem
+        className={ `finding-menu-item ${ selectedIdx === 2 ? "is-active" : "" }` }
+        children="找活動"
+        onClick={ () => setSelectedIdx(2) }
+      />
     </Container>
   )
 }
