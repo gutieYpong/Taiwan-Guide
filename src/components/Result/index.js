@@ -8,7 +8,7 @@ import Category from "./Category";
 import Main from "./Main";
 import Footer from "../Footer";
 
-import { spotInfo, fetchData } from "../../features/fetchDataSlice";
+import { tourismInfo, fetchData } from "../../features/tourismSlice";
 import { API_INFO_MAP } from "../../constants/common";
 
 const GridBox = styled.div`
@@ -22,34 +22,31 @@ const GridBox = styled.div`
 `;
 
 const Result = props => {
-  const [selectedIdx, setSelectedIdx] = useState(0); // category selected index
-  const dispatch = useDispatch();
+  // useEffect(() => {
+  //   // clean up controller
+  //   let isSubscribed = true;
 
-  useEffect(() => {
-    // clean up controller
-    let isSubscribed = true;
+  //   (
+  //     async() => {
+  //       if( isSubscribed )
+  //         await dispatch(fetchData(API_INFO_MAP[selectedIdx].category));
+  //       else
+  //         throw new Error('jump to end.');
+  //     }
+  //   )()
+  //     .then( () => console.log(`data fetcted.`) )
+  //     .catch( error => console.log(error.message) );
 
-    (
-      async() => {
-        if( isSubscribed )
-          await dispatch(fetchData(API_INFO_MAP[selectedIdx].category));
-        else
-          throw new Error('jump to end.');
-      }
-    )()
-      .then( () => console.log(`data fetcted.`) )
-      .catch( error => console.log(error.message) );
-
-    // cancel subscription to useEffect
-    return () => (isSubscribed = false)
-  }, [selectedIdx]);
+  //   // cancel subscription to useEffect
+  //   return () => (isSubscribed = false)
+  // }, [selectedIdx]);
 
   return (
     <GridBox>
       <Header />
       <Search />
-      <Category selectedIdx={ selectedIdx } setSelectedIdx={ setSelectedIdx } />
-      <Main selectedIdx={ selectedIdx } setSelectedIdx={ setSelectedIdx } />
+      <Category />
+      <Main />
       <Footer GridArea style={{ position: 'fixed', bottom: 0 }} />
     </GridBox>
   );

@@ -1,31 +1,22 @@
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-import { fontLayout } from "../../../../constants/api";
+import { fetchData } from "../../../../features/tourismSlice";
+import { setCateSelector } from "../../../../features/layoutSlice";
+import { ACTIVITY_FILTER_LIST } from "../../../../constants/common";
+import { fontLayout, ACTIVITY_FILTER_API } from "../../../../constants/api";
 
 
 /**
- * ... activity menu part ...
-//  * @param { string } IconSrc source of svg icon
-//  * @param { string } MapDesc name of Taiwan's east, north, south & central
-//  * @param { List } DistrictList list of different districts 
-//  * @returns { React.DetailedHTMLProps } the whole activity menu content
+ * ... activity menu part ... (same as delicay)
  */
 
 const ActivityMenuItemBox = styled.div`
-  width: 34.9rem;
-  height: 8.6rem;
-  place-self: ${ ({ AlignStyle }) => AlignStyle };
+  width: 14.5rem;
+  height: 6.8rem;
   display: flex;
-  align-items: center;
-
-  background-color: transparent;
-`;
-
-const ItemMapBox = styled.div`
-  width: 8.5rem;
-  height: 8.5rem;
-  display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
 
   img {
@@ -33,85 +24,61 @@ const ItemMapBox = styled.div`
     height: 6rem;
     filter: invert(62%) sepia(33%) saturate(405%) hue-rotate(54deg) brightness(84%) contrast(86%);
   }
-  span {
-    ${ ({ theme }) => fontLayout('Noto Sans TC', 'normal', 'normal', '1.2rem', '1.7rem', theme.palette.primary.main) }
 
-    letter-spacing: 0.1em;
-  }
-`;
-
-const ItemCityBox = styled.div`
-  width: 26.4rem;
-  height: 6.4rem;
-  display: flex;
-  flex-wrap: wrap;
-
-  span {
-    width: 6.6rem;
-    height: 3.2rem;
-
-    ${ ({ theme }) => fontLayout('Noto Sans TC', 'normal', 'normal', '1.6rem', '3.2rem', theme.palette.neutral.main) }
-
+  a {
+    text-decoration: none;
     text-align: center;
     letter-spacing: 0.05em;
+
+    ${ ({ theme }) => fontLayout('Open Sans', 'normal', 'normal', '1.6rem', '2.2rem', theme.palette.neutral.main) }
   }
 `;
-
-const ActivityMenuItem = ({ IconSrc, MapDesc, DistrictList, AlignStyle }) => {
-  return (
-    <ActivityMenuItemBox AlignStyle={ AlignStyle }>
-      <ItemMapBox>
-        <img src={ IconSrc } alt={ MapDesc } />
-        <span>{ MapDesc }</span>
-      </ItemMapBox>
-      <ItemCityBox>
-        {
-          DistrictList.map( ( item, index ) => (
-            <span key={ index }>{ item }</span>
-          ))
-        }
-      </ItemCityBox>
-    </ActivityMenuItemBox>
-  );
-};
 
 const ActivityMenuBox = styled.div`
   position: absolute;
   width: 100%;
-  height: 28.4rem;
+  height: 10rem;
   top: 10rem;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 4rem;
-  grid-row-gap: 4.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3.2rem;
+  /* transform: translateY(0.5); */
+  /* visibility: visible;
+  opacity: 1;
+  transition: all 2.5s ease; */
+
+  /* background-color: transparent; */
   background: rgba(255, 255, 255, 0.95);
   border-radius: 0 0 .5rem .5rem;
   filter: drop-shadow(0 .2rem .4rem rgba(0, 0, 0, 0.1));
-  
-  &::before {
-    position: absolute;
-    content: "";
-    width: 78.7rem;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border: .1rem solid ${ ({ theme }) => theme.palette.neutral.little };
-  }
 `;
 
 const ActivityMenu = ({ ItemList }) => {
+  const dispatch = useDispatch();
+
   return (
     <ActivityMenuBox>
       {
-        ItemList.map( ( item, index ) => (
-          <ActivityMenuItem 
-            key={ index }
-            IconSrc={ item.icon_src }
-            MapDesc={ item.zone_desc }
-            DistrictList={ item.district_desc }
-            AlignStyle={ item.align_style }
-          />
+        ItemList.map((item, index) => (
+          <ActivityMenuItemBox key={ `activity-${index}` }>
+            <img src={ item.icon_src } alt={ item.icon_desc } />
+            <Link to="/activity"
+              children={ item.icon_desc }
+              onClick={ () => {
+                dispatch(
+                  fetchData({
+                    url: ACTIVITY_FILTER_API(
+                      ACTIVITY_FILTER_LIST[item.icon_desc].reduce((prev, curr, idx) => {
+                        return prev + (idx ? " or " : "") + `Class1 eq '${curr}' or Class2 eq '${curr}'`
+                      }, "")),
+                    cate_type: 'activity'
+                  })
+                );
+                dispatch( setCateSelector('activity') );
+              }}
+            />
+          </ActivityMenuItemBox>
         ))
       }
     </ActivityMenuBox>

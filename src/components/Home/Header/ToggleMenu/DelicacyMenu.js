@@ -1,6 +1,11 @@
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-import { fontLayout } from "../../../../constants/api";
+import { fetchData } from "../../../../features/tourismSlice";
+import { setCateSelector } from "../../../../features/layoutSlice";
+import { DELICACY_FILTER_LIST } from "../../../../constants/common";
+import { fontLayout, RESTAURANT_FILTER_API } from "../../../../constants/api";
 
 
 /**
@@ -20,7 +25,8 @@ const DelicacyMenuItemBox = styled.div`
     filter: invert(62%) sepia(33%) saturate(405%) hue-rotate(54deg) brightness(84%) contrast(86%);
   }
 
-  span {
+  a {
+    text-decoration: none;
     text-align: center;
     letter-spacing: 0.05em;
 
@@ -50,13 +56,29 @@ const DelicacyMenuBox = styled.div`
 
 
 const DelicacyMenu = ({ ItemList }) => {
+  const dispatch = useDispatch();
+
   return (
     <DelicacyMenuBox>
       {
         ItemList.map((item, index) => (
-          <DelicacyMenuItemBox key={ index }>
+          <DelicacyMenuItemBox key={ `delicacy-${index}` }>
             <img src={ item.icon_src } alt={ item.icon_desc } />
-            <span>{ item.icon_desc }</span>
+            <Link to="/delicacy"
+              children={ item.icon_desc }
+              onClick={ () => {
+                dispatch(
+                  fetchData({
+                    url: RESTAURANT_FILTER_API(
+                      DELICACY_FILTER_LIST[item.icon_desc].reduce((prev, curr, idx) => {
+                        return prev + (idx ? " or " : "") + `Class eq '${curr}'`
+                      }, "")),
+                    cate_type: 'delicacy'
+                  })
+                );
+                dispatch( setCateSelector('delicacy') );
+              }}
+            />
           </DelicacyMenuItemBox>
         ))
       }

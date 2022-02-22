@@ -1,6 +1,8 @@
-// import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 
+import { layoutInfo, setCateSelector } from "../../features/layoutSlice";
 import { fontLayout } from "../../constants/api";
 
 
@@ -39,7 +41,7 @@ const Container = styled.div( () => {
   `;
 });
 
-const CategoryItem = styled.div`
+const StyledLink = styled(Link)`
   --category-item-width: 9.6rem;
   place-self: center;
   width: var(--category-item-width);
@@ -47,6 +49,7 @@ const CategoryItem = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
   cursor: pointer;
 
   letter-spacing: 0.1em;
@@ -73,24 +76,28 @@ const CategoryItem = styled.div`
 `;
 
 const Category = props => {
-  const { selectedIdx, setSelectedIdx } = props;
+  const dispatch = useDispatch();
+  const _cateSelector = useSelector(layoutInfo).cateSelector;
   
   return (
     <Container>
-      <CategoryItem
-        className={ `finding-menu-item ${ selectedIdx === 0 ? "is-active" : "" }` }
+      <StyledLink
+        to="/attraction"
+        className={ `finding-menu-item ${ _cateSelector === 'scenicSpot' ? "is-active" : "" }` }
         children="找景點"
-        onClick={ () => setSelectedIdx(0) }
+        onClick={ () => dispatch(setCateSelector('scenicSpot')) }
       />
-      <CategoryItem
-        className={ `finding-menu-item ${ selectedIdx === 1 ? "is-active" : "" }` }
+      <StyledLink
+        to="/delicacy"
+        className={ `finding-menu-item ${ _cateSelector === 'delicacy' ? "is-active" : "" }` }
         children="找美食"
-        onClick={ () => setSelectedIdx(1) }
+        onClick={ () => dispatch(setCateSelector('delicacy')) }
       />
-      <CategoryItem
-        className={ `finding-menu-item ${ selectedIdx === 2 ? "is-active" : "" }` }
+      <StyledLink
+        to="/activity"
+        className={ `finding-menu-item ${ _cateSelector === 'activity' ? "is-active" : "" }` }
         children="找活動"
-        onClick={ () => setSelectedIdx(2) }
+        onClick={ () => dispatch(setCateSelector('activity')) }
       />
     </Container>
   )

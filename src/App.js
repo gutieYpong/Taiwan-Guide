@@ -64,8 +64,11 @@ const App = props => {
       <Container className="FOR-RECKON-base-container">
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={ <HomePage /> } />
-            <Route path="/result" element={ <ResultPage /> } />
+            <Route path="/" element={ <HomePage /> }></Route>
+            <Route path="/attraction" element={ <ResultPage /> } />
+            <Route path="/delicacy" element={ <ResultPage /> } />
+            <Route path="/activity" element={ <ResultPage /> } />
+            {/* <Route path="*" element={<NotFound />} /> */}
           </Routes>
         </BrowserRouter>
       </Container>

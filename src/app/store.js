@@ -1,11 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
-import dataReducer from '../features/fetchDataSlice';
+
+import tourismReducer from '../features/tourismSlice';
+import layoutReducer from '../features/layoutSlice';
 
 
 export default configureStore({
   reducer: {
-    spot: dataReducer,
+    tourism: tourismReducer,
+    layout: layoutReducer,
   },
   middleware: ( getDefaultMiddleware ) => getDefaultMiddleware().concat(logger),
   devTools: process.env.NODE_ENV !== 'production',

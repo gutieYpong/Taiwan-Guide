@@ -41,23 +41,34 @@ import {
   Enjoy7,
 } from "../assets";
 
-
 export const ATTRACTION_MENU_ITEM_LIST = [
   {
-    icon_src: AnnualIcon,
-    icon_desc: "年度活動",
+    zone_desc: "北台灣",
+    icon_src: NorthIcon,
+    city_name_ch: ["台北市", "新北市", "基隆市", "桃園市", "新竹市", "新竹縣", "宜蘭縣"],
+    city_name_eng: ["Taipei", "NewTaipei", "Keelung", "Taoyuan", "Hsinchu", "HsinchuCounty", "YilanCounty"],
+    align_style: "flex-end right"
   },
   {
-    icon_src: BicycleIcon,
-    icon_desc: "單車之旅",
+    zone_desc: "中台灣",
+    icon_src: CentralIcon,
+    city_name_ch: ["台中市", "苗栗縣", "彰化縣", "南投縣", "雲林縣"],
+    city_name_eng: ["Taichung", "MiaoliCounty", "ChanghuaCounty", "NantouCounty", "YunlinCounty"],
+    align_style: "flex-end left"
   },
   {
-    icon_src: OutdoorIcon,
-    icon_desc: "親近山海",
+    zone_desc: "南台灣",
+    icon_src: SouthIcon,
+    city_name_ch: ["高雄市", "台南市", "嘉義市", "嘉義縣", "屏東縣", "澎湖縣"],
+    city_name_eng: ["Kaohsiung", "Tainan", "Chiayi", "ChiayiCounty", "PingtungCounty", "PenghuCounty"],
+    align_style: "flex-start right"
   },
   {
-    icon_src: CelebrationIcon,
-    icon_desc: "節日慶典",
+    zone_desc: "東台灣",
+    icon_src: EastIcon,
+    city_name_ch: ["花蓮縣", "台東縣"],
+    city_name_eng: ["HualienCounty", "TaitungCounty"],
+    align_style: "flex-start left"
   },
 ];
 
@@ -82,28 +93,20 @@ export const DELICACY_MENU_ITEM_LIST = [
 
 export const ACTIVITY_MENU_ITEM_LIST = [
   {
-    zone_desc: "北台灣",
-    icon_src: NorthIcon,
-    district_desc: ["台北市", "新北市", "基隆市", "桃園市", "新竹市", "新竹縣", "宜蘭縣"],
-    align_style: "flex-end right"
+    icon_src: AnnualIcon,
+    icon_desc: "年度活動",
   },
   {
-    zone_desc: "中台灣",
-    icon_src: CentralIcon,
-    district_desc: ["台中市", "苗栗縣", "彰化縣", "南投縣", "雲林縣"],
-    align_style: "flex-end left"
+    icon_src: BicycleIcon,
+    icon_desc: "單車之旅",
   },
   {
-    zone_desc: "南台灣",
-    icon_src: SouthIcon,
-    district_desc: ["高雄市", "台南市", "嘉義市", "嘉義縣", "屏東縣", "澎湖縣"],
-    align_style: "flex-start right"
+    icon_src: OutdoorIcon,
+    icon_desc: "親近山海",
   },
   {
-    zone_desc: "東台灣",
-    icon_src: EastIcon,
-    district_desc: ["花蓮縣", "台東縣"],
-    align_style: "flex-start left"
+    icon_src: CelebrationIcon,
+    icon_desc: "節日慶典",
   },
 ];
 
@@ -180,11 +183,40 @@ export const ENJOY_LIST = [
   },
 ];
 
-export const SORTING_FILTER_LIST = ['相關結果優先', '最新結果優先', '最舊結果優先'];
+/**
+ * ... Filters ...
+ */
+export const CATE_SELECTOR_MAP = { scenicSpot: 0, delicacy: 1, activity: 2 };
 export const CITY_LIST = ['台北市', '新北市', '桃園市', '基隆市', '新竹市', '台中市'];
+export const SORTING_FILTER_LIST = ['相關結果優先', '最新結果優先', '最舊結果優先'];
+export const SERVICE_FILTER_LIST = [
+  ['停車場', '購票資訊'],
+  ['停車場'],
+  ['即將開始', '進行中']
+];
+export const THEME_FILTER_LIST = [
+  ['自然風景', '觀光工廠', '文化古蹟', '溫泉風呂'],
+  ['飽餐一頓', '甜食冰品', '在地美味', '特色伴手禮'],
+  ['年度活動', '單車之旅', '親近山海', '節日慶典']
+]
+
 export const SPOT_FILTER_LIST = ['文化類', '觀光工廠類', '自然風景類', '生態類', '遊憩類', '其他', '廟宇類', '體育健身類', '休閒農業類', '溫泉類', '古蹟類', '藝術類', '國家風景區類', '都會公園類', '林場類', '國家公園類', '小吃/特產類', '森林遊樂區類', 'null'];
-export const DELICACY_FILTER_LIST = ['地方特產', '異國料理', '其他', '中式美食', '夜市小吃', '甜點冰品', '伴手禮', '素食', '火烤料理', 'null'];
-export const ACTIVITY_FILTER_LIST = ['其他', '節慶活動', '年度活動', '四季活動', '自行車活動', '藝文活動', '活動快報', '遊憩活動', '產業文化活動', 'null'];
+export const DELICACY_FILTER_LIST = {
+  飽餐一頓: ['異國料理', '其他', '中式美食', '夜市小吃', '素食', '火烤料理'],
+  甜食冰品: ['甜點冰品'],
+  在地美味: ['夜市小吃', '地方特產', '中式美食'],
+  特色伴手禮: ['地方特產', '伴手禮'],
+};
+// ['地方特產', '異國料理', '其他', '中式美食', '夜市小吃', '甜點冰品', '伴手禮', '素食', '火烤料理', 'null'];
+export const ACTIVITY_FILTER_LIST = {
+  年度活動: ['年度活動', '四季活動'],
+  單車之旅: ['自行車活動', '遊憩活動'],
+  親近山海: ['四季活動', '遊憩活動'],
+  節日慶典: ['節慶活動'],
+}
+// ['其他', '節慶活動', '年度活動', '四季活動', '自行車活動', '藝文活動', '活動快報', '遊憩活動', '產業文化活動', 'null'];
+
+
 export const API_INFO_MAP = [
   {
     category: 'ScenicSpot',

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import styled, { useTheme } from "styled-components";
 
 import ToggleMenu from "./ToggleMenu";
@@ -132,12 +131,10 @@ const Header = props => {
         </NaviItem>
         <NaviItem StartCol={ 5 } EndCol={ 9 } 
         >
-          <Link to="/result" style={{ textDecoration: 'none' }}>
-            <CategoryItem 
-              TitleCH='找景點' TitleEN='ATTRACTION'
-              menuSelector={ 'attraction' } setMenuSelector={ setMenuSelector }
-            />
-          </Link>
+          <CategoryItem 
+            TitleCH='找景點' TitleEN='ATTRACTION'
+            menuSelector={ 'attraction' } setMenuSelector={ setMenuSelector }
+          />
           <CategoryItem 
             TitleCH='找美食' TitleEN='DELICACY'
             menuSelector={ 'delicacy' } setMenuSelector={ setMenuSelector }

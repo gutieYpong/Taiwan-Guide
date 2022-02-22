@@ -39,6 +39,13 @@ export const getAuthorizationHeader = () => {
   return { 'Authorization': Authorization, 'X-Date': GMTString }; 
 }
 
-export const SCENIC_SPOT_API = "https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot/Tainan?%24top=200&%24format=JSON"; // tainan, top200
+export const SCENIC_SPOT_API = "https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot/Tainan?%24top=200&%24format=JSON";
 export const RESTAURANT_API = "https://ptx.transportdata.tw/MOTC/v2/Tourism/Restaurant/Taipei?%24top=30&%24format=JSON";
 export const ACTIVITY_API = "https://ptx.transportdata.tw/MOTC/v2/Tourism/Activity/Taipei?%24top=30&%24format=JSON";
+
+export const SCENIC_SPOT_CITY_API = ( query ) => `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot/${query}?%24top=200&%24format=JSON`;
+// export const SCENIC_SPOT_CATEGORY_API = ( query ) => `https://ptx.transportdata.tw/MOTC/v2/Tourism/${query}?%24top=200&%24format=JSON`;
+export const RESTAURANT_ALL_API = `https://ptx.transportdata.tw/MOTC/v2/Tourism/Restaurant?%24top=200&%24format=JSON`;
+export const ACTIVITY_ALL_API = `https://ptx.transportdata.tw/MOTC/v2/Tourism/Activity?%24top=200&%24format=JSON`;
+export const RESTAURANT_FILTER_API = ( filterCondition ) => `https://ptx.transportdata.tw/MOTC/v2/Tourism/Restaurant?$filter=${filterCondition}&%24top=200&%24format=JSON`;
+export const ACTIVITY_FILTER_API = ( filterCondition ) => `https://ptx.transportdata.tw/MOTC/v2/Tourism/Activity?$filter=${filterCondition}&%24top=200&%24format=JSON`;

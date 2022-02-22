@@ -1,10 +1,11 @@
 import { useSelector } from 'react-redux';
 import styled from "styled-components";
 
-import { spotInfo } from "../../../features/fetchDataSlice";
+import { tourismInfo } from "../../../features/tourismSlice";
+import { layoutInfo } from "../../../features/layoutSlice";
 import { fontLayout } from "../../../constants/api";
 import { SortingDropdown } from "../../../stories/mine/Dropdown";
-import { SORTING_FILTER_LIST } from "../../../constants/common";
+import { CATE_SELECTOR_MAP, SORTING_FILTER_LIST, SERVICE_FILTER_LIST, THEME_FILTER_LIST } from "../../../constants/common";
 
 
 const Container = styled.div`
@@ -133,12 +134,13 @@ const ThemeCategory = styled.div`
 `;
 
 const Filter = props => {
-  const states = useSelector(spotInfo);
+  const tourismStates = useSelector(tourismInfo);
+  const _cateSelector = useSelector(layoutInfo).cateSelector;
 
   return (
     <Container>
       <SearchCount>
-        共有<span>{ states.data.length }</span>筆搜尋結果
+        共有<span>{ tourismStates.data[_cateSelector].length }</span>筆搜尋結果
       </SearchCount>
       <SortingFilterBox>
         <Label>排序方式</Label>
@@ -148,37 +150,35 @@ const Filter = props => {
         />
       </SortingFilterBox>
       <ServiceFilterBox>
-        <Label>服務資訊</Label>
+        <Label>{ CATE_SELECTOR_MAP[_cateSelector] === 2 ? '活動檔期' : '服務資訊' }</Label>
         <div>
-          <ServiceFilterOption htmlFor="serviceFilter">
-            停車場
-            <input
-              id="serviceFilter"
-              type="checkbox"
-              name="service-filter"
-              // checked={}
-              onChange={ () => {} }
-            />
-          </ServiceFilterOption>
-          <ServiceFilterOption htmlFor="serviceFilter">
-            購票資訊
-            <input
-              id="serviceFilter"
-              type="checkbox"
-              name="service-filter"
-              // checked={}
-              onChange={ () => {} }
-            />
-          </ServiceFilterOption>
+          {
+            SERVICE_FILTER_LIST[CATE_SELECTOR_MAP[_cateSelector]].map((item, index) => (
+              <ServiceFilterOption
+                key={`service-filter-${_cateSelector}-${index}`}
+                htmlFor={`serviceFilter${index}`}
+              >
+                { item }
+                <input
+                  id={`serviceFilter${index}`}
+                  type="checkbox"
+                  name={`service-filter-${index}`}
+                  // checked={}
+                  onChange={ () => {} }
+                />
+              </ServiceFilterOption>
+            ))
+          }
         </div>
       </ServiceFilterBox>
       <ThemeCategory>
         <Label>主題類別</Label>
         <div>
-          <button>自然風景</button>
-          <button>觀光工廠</button>
-          <button>文化古蹟</button>
-          <button>溫泉風呂</button>
+          {
+            THEME_FILTER_LIST[CATE_SELECTOR_MAP[_cateSelector]].map((item, index) => (
+              <button key={`theme-filter-${index}`}>{ item }</button>
+            ))
+          }
         </div>
       </ThemeCategory>
     </Container>

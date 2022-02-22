@@ -2,15 +2,15 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import styled, { useTheme } from "styled-components";
 import { Pagination, Stack, Skeleton } from '@mui/material';
+import { isEmpty } from 'lodash';
 
 import usePagination from "../../../hooks/usePagination";
 import { CardContainer, Card } from "./Card";
-import { spotInfo } from "../../../features/fetchDataSlice";
-import { API_INFO_MAP } from "../../../constants/common";
+import { fetchData, tourismInfo } from "../../../features/tourismSlice";
+import { layoutInfo } from "../../../features/layoutSlice";
+import { API_INFO_MAP, CATE_SELECTOR_MAP } from "../../../constants/common";
 import { fontLayout } from "../../../constants/api";
 
-import spotJson from "../../../constants/scenic.spot.json"
-// import tmpJson from "../../../constants/tmp.json";
 
 const Container = styled.div`
   width: 100%;
@@ -36,32 +36,56 @@ const CardBox = styled.div`
 
 
 const Content = props => {
-  const { selectedIdx } = props;
   const theme = useTheme();
-  const states = useSelector(spotInfo);
+  const dispatch = useDispatch();
+  const _cateSelector = useSelector(layoutInfo).cateSelector;
+  const tourismStates = useSelector(tourismInfo);
+  const tourismData = tourismStates.data[_cateSelector];
 
-  const NUM_OF_ITEMS = states.data.length;
+  // console.log(`cateSelector: ${layoutStates.cateSelector}`)
+  // console.log(`tourismData: ${tourismData}`)
+  const NUM_OF_ITEMS = tourismData.length;
   const ITEMS_PER_PAGE = 18;
   const [page, setPage] = useState(1);
 
   const count = Math.ceil( NUM_OF_ITEMS / ITEMS_PER_PAGE );
-  const _DATA = usePagination( states.data, ITEMS_PER_PAGE );
+  const _DATA = usePagination( tourismData, ITEMS_PER_PAGE );
 
   const handleChange = ( e, p ) => {
     setPage(p);
     _DATA.jumpPage(p);
   }
 
-  useEffect(() => {
-    setPage(1);
-  }, [selectedIdx]);
+  // useEffect(() => {
+  //   // clean up controller
+  //   let isSubscribed = true;
+
+  //   (
+  //     async() => {
+  //       if( isSubscribed && isEmpty(tourismStates.data[_cateSelector]) )
+  //         await dispatch(fetchData(
+  //           `https://ptx.transportdata.tw/MOTC/v2/Tourism/${_cateSelector}?%24top=200&%24format=JSON`
+  //         ));
+  //       else
+  //         throw new Error('jump to end.');
+  //     }
+  //   )()
+  //     .then( () => console.log(`data fetcted.`) )
+  //     .catch( error => console.log(error.message) );
+
+  //   // cancel subscription to useEffect
+  //   return () => (isSubscribed = false)
+  // }, [_cateSelector]);
+
+  // useEffect(() => {
+  //   setPage(1);
+  // }, [selectedIdx]);
 
   return (
     <Container>
       <CardBox>
-        {/* <div>{ states.status }</div> */}
         {
-          states.status === 'loading' ?
+          tourismStates.status === 'loading' ?
           [...Array(10).keys()].map( item => (
             <CardContainer key={ `loading-item-${item}` }>
               <Skeleton sx={{ width: '100%', height: '13.7rem', borderRadius: '.5rem', backgroundColor: '#E7E7E7' }} animation="wave"  variant="rectangular" />
@@ -74,11 +98,11 @@ const Content = props => {
           _DATA.currentData().map((item, index) => {
             return (
               <Card
-                key={ item[API_INFO_MAP[selectedIdx].id_key] }
-                ItemName={ item[API_INFO_MAP[selectedIdx].name_key] }
+                key={ item[API_INFO_MAP[CATE_SELECTOR_MAP[_cateSelector]].id_key] }
+                ItemName={ item[API_INFO_MAP[CATE_SELECTOR_MAP[_cateSelector]].name_key] }
                 Item={ item }
                 Theme={ theme }
-                selectedIdx={ selectedIdx }
+                CateIndex={ CATE_SELECTOR_MAP[_cateSelector] }
               />
             )
           })

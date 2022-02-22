@@ -27,13 +27,11 @@ const MainWrapper = styled.div`
 `;
 
 const Main = props => {
-  const { selectedIdx, setSelectedIdx } = props;
-
   return (
     <Container>
       <MainWrapper>
         <Filter />
-        <Content selectedIdx={ selectedIdx } setSelectedIdx={ setSelectedIdx } />
+        <Content />
         {/* <NoResultFound /> */}
         {/* <WebsiteFailure /> */}
       </MainWrapper>

@@ -1,9 +1,8 @@
 import styled from "styled-components";
-import { Pagination, Stack, Skeleton } from '@mui/material';
 import { isEmpty } from "lodash";
 
 import { fontLayout } from "../../../constants/api";
-import { HeartOutlineIcon, GPSIcon, MissingSpotImg, MissingRestaurantImg, MissingActivityImg } from "../../../assets";
+import { GPSIcon, MissingSpotImg, MissingRestaurantImg, MissingActivityImg } from "../../../assets";
 import { HeartIcon } from "../../../constants/svg";
 
 export const CardContainer = styled.div`
@@ -89,7 +88,7 @@ export const CardContainer = styled.div`
   }
 `;
 
-export const Card = ({ Item, ItemName, Theme, selectedIdx }) => {
+export const Card = ({ Item, ItemName, Theme, CateIndex }) => {
   const MISSING_IMG_MAP = [MissingSpotImg, MissingRestaurantImg, MissingActivityImg];
   const isMissing = isEmpty( Item.Picture );
   return (
@@ -101,7 +100,7 @@ export const Card = ({ Item, ItemName, Theme, selectedIdx }) => {
           StrokeColor={ Theme.palette.white }
           // style={{ filter: 'brightness(85%)' }}
         />
-        <img className="image" src={ isMissing ? MISSING_IMG_MAP[selectedIdx] : Item.Picture.PictureUrl1 } alt={ isMissing ? ItemName : Item.Picture.PictureDescription1 } />
+        <img className="image" src={ isMissing ? MISSING_IMG_MAP[CateIndex] : Item.Picture.PictureUrl1 } alt={ isMissing ? ItemName : Item.Picture.PictureDescription1 } />
       </div>
       <div className="content-card--desc">
         <p className="content-card--title">{ ItemName }</p>
