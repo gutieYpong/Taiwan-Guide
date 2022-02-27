@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import styled, { useTheme } from "styled-components";
 
 import { fontLayout } from "../../constants/api";
@@ -95,9 +94,9 @@ const Header = props => {
     <Container>
       <NaviWrapper>
         <NaviItem StartCol={ 1 } EndCol={ 3 } JustifyContent="left">
-          <Link to="/" style={{ textDecoration: 'none' }}>
+          <a href="/">
             <LogoItem src={ LogoIcon } alt='Logo' />
-          </Link>
+          </a>
         </NaviItem>
         <NaviItem StartCol={ 4 } EndCol={ 10 } JustifyContent="center">
           <NoticeItem>

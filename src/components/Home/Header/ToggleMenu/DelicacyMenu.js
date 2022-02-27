@@ -2,9 +2,8 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-import { fetchData } from "../../../../features/tourismSlice";
-import { setCateSelector } from "../../../../features/layoutSlice";
-import { DELICACY_FILTER_LIST } from "../../../../constants/common";
+import { fetchData, setThemeSelector } from "../../../../features/tourismSlice";
+import { DATA_FILTER_OBJECT } from "../../../../constants/common";
 import { fontLayout, RESTAURANT_FILTER_API } from "../../../../constants/api";
 
 
@@ -58,6 +57,19 @@ const DelicacyMenuBox = styled.div`
 const DelicacyMenu = ({ ItemList }) => {
   const dispatch = useDispatch();
 
+  const handleClick = (index) => {
+    dispatch(
+      fetchData({
+        url: RESTAURANT_FILTER_API(
+          DATA_FILTER_OBJECT.delicacy.theme[index].filter.reduce((prev, curr, idx) => {
+            return prev + (idx ? " or " : "") + `Class eq '${curr}'`
+          }, "")),
+        cateType: 'delicacy'
+      })
+    );
+    dispatch( setThemeSelector({ cateType: 'delicacy', index: index }) );
+  }
+
   return (
     <DelicacyMenuBox>
       {
@@ -66,18 +78,7 @@ const DelicacyMenu = ({ ItemList }) => {
             <img src={ item.icon_src } alt={ item.icon_desc } />
             <Link to="/delicacy"
               children={ item.icon_desc }
-              onClick={ () => {
-                dispatch(
-                  fetchData({
-                    url: RESTAURANT_FILTER_API(
-                      DELICACY_FILTER_LIST[item.icon_desc].reduce((prev, curr, idx) => {
-                        return prev + (idx ? " or " : "") + `Class eq '${curr}'`
-                      }, "")),
-                    cate_type: 'delicacy'
-                  })
-                );
-                dispatch( setCateSelector('delicacy') );
-              }}
+              onClick={ () => handleClick(index) }
             />
           </DelicacyMenuItemBox>
         ))

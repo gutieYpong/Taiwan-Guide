@@ -39,6 +39,10 @@ import {
   Enjoy5,
   Enjoy6,
   Enjoy7,
+
+  MissingSpotImg,
+  MissingRestaurantImg,
+  MissingActivityImg,
 } from "../assets";
 
 export const ATTRACTION_MENU_ITEM_LIST = [
@@ -183,54 +187,129 @@ export const ENJOY_LIST = [
   },
 ];
 
+export const CITY_LIST = ['台北市', '新北市', '基隆市', '桃園市', '新竹市', '新竹縣', '宜蘭縣', '台中市', '苗栗縣', '彰化縣', '南投縣', '雲林縣', '高雄市', '台南市', '嘉義市', '嘉義縣', '屏東縣', '澎湖縣', '花蓮縣', '台東縣', '台北市', '新北市', '桃園市', '基隆市', '新竹市', '台中市'];
+
 /**
  * ... Filters ...
  */
 export const CATE_SELECTOR_MAP = { scenicSpot: 0, delicacy: 1, activity: 2 };
-export const CITY_LIST = ['台北市', '新北市', '桃園市', '基隆市', '新竹市', '台中市'];
-export const SORTING_FILTER_LIST = ['相關結果優先', '最新結果優先', '最舊結果優先'];
-export const SERVICE_FILTER_LIST = [
-  ['停車場', '購票資訊'],
-  ['停車場'],
-  ['即將開始', '進行中']
-];
-export const THEME_FILTER_LIST = [
-  ['自然風景', '觀光工廠', '文化古蹟', '溫泉風呂'],
-  ['飽餐一頓', '甜食冰品', '在地美味', '特色伴手禮'],
-  ['年度活動', '單車之旅', '親近山海', '節日慶典']
-]
-
-export const SPOT_FILTER_LIST = ['文化類', '觀光工廠類', '自然風景類', '生態類', '遊憩類', '其他', '廟宇類', '體育健身類', '休閒農業類', '溫泉類', '古蹟類', '藝術類', '國家風景區類', '都會公園類', '林場類', '國家公園類', '小吃/特產類', '森林遊樂區類', 'null'];
-export const DELICACY_FILTER_LIST = {
-  飽餐一頓: ['異國料理', '其他', '中式美食', '夜市小吃', '素食', '火烤料理'],
-  甜食冰品: ['甜點冰品'],
-  在地美味: ['夜市小吃', '地方特產', '中式美食'],
-  特色伴手禮: ['地方特產', '伴手禮'],
+export const DATA_FILTER_OBJECT = {
+  scenicSpot: {
+    api_category: 'ScenicSpot',
+    missing_img: MissingSpotImg,
+    params: {
+      id: 'ScenicSpotID',
+      name: 'ScenicSpotName'
+    },
+    service: [
+      {
+        title: '停車場',
+        filter_indicator: 'ParkingInfo'
+      },
+      {
+        title: '購票資訊',
+        filter_indicator: 'TicketInfo'
+      }
+    ],
+    theme: [
+      {
+        title: '自然風景',
+        filter: ['自然風景類', '生態類', '遊憩類', '體育健身類', '國家風景區類', '都會公園類', '林場類', '國家公園類', '森林遊樂區類', '其他'],
+      },
+      {
+        title: '觀光工廠',
+        filter: ['觀光工廠類', '休閒農業類', '小吃/特產類'],
+      },
+      {
+        title: '文化古蹟',
+        filter: ['文化類', '廟宇類', '古蹟類', '藝術類'],
+      },
+      {
+        title: '溫泉風呂',
+        filter: ['溫泉類'],
+      }
+    ]
+  },
+  delicacy: {
+    api_category: 'Restaurant',
+    missing_img: MissingRestaurantImg,
+    params: {
+      id: 'RestaurantID',
+      name: 'RestaurantName'
+    },
+    service: [
+      {
+        title: '停車場',
+        filter_indicator: 'ParkingInfo'
+      }
+    ],
+    theme: [
+      {
+        title: '飽餐一頓',
+        filter: ['異國料理', '其他', '中式美食', '夜市小吃', '素食', '火烤料理'],
+      },
+      {
+        title: '甜食冰品',
+        filter: ['甜點冰品'],
+      },
+      {
+        title: '在地美味',
+        filter: ['夜市小吃', '地方特產', '中式美食'],
+      },
+      {
+        title: '特色伴手禮',
+        filter: ['地方特產', '伴手禮'],
+      }
+    ]
+  },
+  activity: {
+    api_category: 'Activity',
+    missing_img: MissingActivityImg,
+    params: {
+      id: 'ActivityID',
+      name: 'ActivityName'
+    },
+    service: [
+      {
+        title: '即將開始',
+        filter_indicator: 'ComingSoon'
+      },
+      {
+        title: '進行中',
+        filter_indicator: 'Happening'
+      }
+    ],
+    theme: [
+      {
+        title: '年度活動',
+        filter: ['年度活動', '四季活動'],
+      },
+      {
+        title: '單車之旅',
+        filter: ['自行車活動', '遊憩活動'],
+      },
+      {
+        title: '親近山海',
+        filter: ['四季活動', '遊憩活動'],
+      },
+      {
+        title: '節日慶典',
+        filter: ['節慶活動'],
+      }
+    ]
+  },
+  sorting: [
+    {
+      title: '相關結果優先',
+      order: 'desc'
+    },
+    {
+      title: '最新結果優先',
+      order: 'desc'
+    },
+    {
+      title: '最舊結果優先',
+      order: 'asc'
+    }
+  ]
 };
-// ['地方特產', '異國料理', '其他', '中式美食', '夜市小吃', '甜點冰品', '伴手禮', '素食', '火烤料理', 'null'];
-export const ACTIVITY_FILTER_LIST = {
-  年度活動: ['年度活動', '四季活動'],
-  單車之旅: ['自行車活動', '遊憩活動'],
-  親近山海: ['四季活動', '遊憩活動'],
-  節日慶典: ['節慶活動'],
-}
-// ['其他', '節慶活動', '年度活動', '四季活動', '自行車活動', '藝文活動', '活動快報', '遊憩活動', '產業文化活動', 'null'];
-
-
-export const API_INFO_MAP = [
-  {
-    category: 'ScenicSpot',
-    id_key: 'ScenicSpotID',
-    name_key: 'ScenicSpotName'
-  },
-  {
-    category: 'Restaurant',
-    id_key: 'RestaurantID',
-    name_key: 'RestaurantName'
-  },
-  {
-    category: 'Activity',
-    id_key: 'ActivityID',
-    name_key: 'ActivityName'
-  }
-];

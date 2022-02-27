@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 import { fetchData } from "../../../../features/tourismSlice";
-import { setCateSelector } from "../../../../features/layoutSlice";
 import { fontLayout, SCENIC_SPOT_CITY_API } from "../../../../constants/api";
 
 
@@ -73,17 +72,16 @@ const AttractionMenuItem = ({ IconSrc, MapDesc, CityListCH, CityListENG, AlignSt
       <ItemCityBox>
         {
           CityListCH.map( ( item, index ) => (
-            <Link to="/attraction"
+            <Link to="/scenicSpot"
               key={ `city-${index}` }
               children={ item }
               onClick={ () => {
                 dispatch(
                   fetchData({
                     url: SCENIC_SPOT_CITY_API(CityListENG[index]),
-                    cate_type: 'scenicSpot'
+                    cateType: 'scenicSpot'
                   })
                 );
-                dispatch( setCateSelector('scenicSpot') );
               }}
             />
           ))

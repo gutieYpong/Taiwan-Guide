@@ -7,7 +7,8 @@ TODO.
 - Search Box ✅
 - Project re-initialize, w/ restructuring & relative responsive design ✅
 - Search Page layout ✅
-- Manual path input no data fetching
+- Manual path input no data fetching ✅
+- Search function
 
 TO BE FIXED.
 - Language options

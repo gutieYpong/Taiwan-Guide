@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import styled, { css } from "styled-components";
 
 import { layoutInfo, setCateSelector } from "../../features/layoutSlice";
@@ -77,27 +77,29 @@ const StyledLink = styled(Link)`
 
 const Category = props => {
   const dispatch = useDispatch();
-  const _cateSelector = useSelector(layoutInfo).cateSelector;
+  const params = useParams();
+  const _cateSelector = params.cateSelector;
+  // const _cateSelector = useSelector(layoutInfo).cateSelector;
   
   return (
     <Container>
       <StyledLink
-        to="/attraction"
+        to="/scenicSpot"
         className={ `finding-menu-item ${ _cateSelector === 'scenicSpot' ? "is-active" : "" }` }
         children="找景點"
-        onClick={ () => dispatch(setCateSelector('scenicSpot')) }
+        onClick={ () => _cateSelector !== 'scenicSpot' && dispatch(setCateSelector('scenicSpot')) }
       />
       <StyledLink
         to="/delicacy"
         className={ `finding-menu-item ${ _cateSelector === 'delicacy' ? "is-active" : "" }` }
         children="找美食"
-        onClick={ () => dispatch(setCateSelector('delicacy')) }
+        onClick={ () => _cateSelector !== 'delicacy' && dispatch(setCateSelector('delicacy')) }
       />
       <StyledLink
         to="/activity"
         className={ `finding-menu-item ${ _cateSelector === 'activity' ? "is-active" : "" }` }
         children="找活動"
-        onClick={ () => dispatch(setCateSelector('activity')) }
+        onClick={ () => _cateSelector !== 'activity' && dispatch(setCateSelector('activity')) }
       />
     </Container>
   )

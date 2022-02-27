@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+import ScrollToTop from "./components/ScrollToTop";
 import HomePage from "./components/Home";
 import ResultPage from './components/Result';
 
@@ -55,7 +56,7 @@ const Container = styled.div`
   /* flex-direction: column; */
   /* align-items: center; */
 
-  background-color: lightcoral;
+  /* background-color: lightcoral; */
 `;
 
 const App = props => {
@@ -63,13 +64,13 @@ const App = props => {
     <ThemeProvider theme={ theme }>
       <Container className="FOR-RECKON-base-container">
         <BrowserRouter>
+          <ScrollToTop>
           <Routes>
             <Route path="/" element={ <HomePage /> }></Route>
-            <Route path="/attraction" element={ <ResultPage /> } />
-            <Route path="/delicacy" element={ <ResultPage /> } />
-            <Route path="/activity" element={ <ResultPage /> } />
+            <Route path="/:cateSelector" element={ <ResultPage /> } />
             {/* <Route path="*" element={<NotFound />} /> */}
           </Routes>
+          </ScrollToTop>
         </BrowserRouter>
       </Container>
     </ThemeProvider>

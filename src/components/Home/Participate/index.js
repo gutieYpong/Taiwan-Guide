@@ -1,8 +1,11 @@
 import { useState } from "react";
+import { useDispatch } from 'react-redux';
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-import { fontLayout } from "../../../constants/api";
-import { PARTICIPATE_IMAGES } from "../../../constants/common";
+import { fetchData, setThemeSelector } from '../../../features/tourismSlice';
+import { fontLayout, ACTIVITY_FILTER_API } from "../../../constants/api";
+import { PARTICIPATE_IMAGES, DATA_FILTER_OBJECT } from "../../../constants/common";
 
 
 const Container = styled.div`
@@ -64,14 +67,10 @@ const ParticipateDesc = styled.div`
   ul {
     padding-inline-start: 0;
 
-    li {
+    a {
       position: relative;
-      letter-spacing: 0.15em;
-      list-style: none;
-      margin-top: 3.2rem;
-      padding-left: 1rem;
-
-      ${ ({ theme }) => fontLayout('Open Sans', 'normal', '400', '1.6rem', '2.2rem', theme.palette.primary.main) }
+      display: block;
+      text-decoration: none;
 
       &:not(:nth-child(1))::before {
         position: absolute;
@@ -82,19 +81,30 @@ const ParticipateDesc = styled.div`
         left: 0;
         background-color: ${ ({ theme }) => theme.palette.primary.main };
       }
-      &:hover {
-        cursor: pointer;
-        &::after {
-          position: absolute;
-          content: "";
-          width: .8rem;
-          height: .8rem;
-          background-color: ${ ({ theme }) => theme.palette.auxiliary.yellow };
-          top: 50%;
-          transform: translateY(-50%);
-          left: 16.3rem;
-          border-radius: .4rem;
-          opacity: 1;
+
+      li {
+        position: relative;
+        letter-spacing: 0.15em;
+        list-style: none;
+        margin-top: 3.2rem;
+        padding-left: 1rem;
+  
+        ${ ({ theme }) => fontLayout('Open Sans', 'normal', '400', '1.6rem', '2.2rem', theme.palette.primary.main) }
+
+        &:hover {
+          cursor: pointer;
+          &::before {
+            position: absolute;
+            content: "";
+            width: .8rem;
+            height: .8rem;
+            background-color: ${ ({ theme }) => theme.palette.auxiliary.yellow };
+            top: 50%;
+            transform: translateY(-50%);
+            left: 16.3rem;
+            border-radius: .4rem;
+            opacity: 1;
+          }
         }
       }
     }
@@ -102,6 +112,8 @@ const ParticipateDesc = styled.div`
 `;
 
 const Participate = props => {
+  const ITEM_DESC_LIST = ['一年一度精采盛事', '追逐自由單車旅程', '親自踏上山海之旅', '體驗台灣文化慶典'];
+  const dispatch = useDispatch();
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   return (
@@ -114,10 +126,30 @@ const Participate = props => {
             <p>體驗當地風情人文</p>
             <p>台灣擁有豐富文俗風情，因地貌多變延伸出豐富的主題活動，邀請你體驗文化的精彩。</p>
             <ul>
-              <li onMouseEnter={ () => setSelectedIndex( 1 ) }>一年一度精采盛事</li>
-              <li onMouseEnter={ () => setSelectedIndex( 2 ) }>追逐自由單車旅程</li>
-              <li onMouseEnter={ () => setSelectedIndex( 3 ) }>親自踏上山海之旅</li>
-              <li onMouseEnter={ () => setSelectedIndex( 4 ) }>體驗台灣文化慶典</li>
+              {
+                ITEM_DESC_LIST.map((item, index) => (
+                  <Link to="/activity"
+                    key={`participate-activity-${index}`}
+                    onClick={ () => {
+                      dispatch(
+                        fetchData({
+                          url: ACTIVITY_FILTER_API(
+                            DATA_FILTER_OBJECT.activity.theme[index].filter.reduce((prev, curr, idx) => {
+                              return prev + (idx ? " or " : "") + `Class1 eq '${curr}' or Class2 eq '${curr}'`
+                            }, "")),
+                            cateType: 'activity'
+                        })
+                      );
+                      dispatch( setThemeSelector({ cateType: 'activity', index: index }) );
+                    }}
+                  >
+                    <li
+                      children={ item }
+                      onMouseEnter={ () => setSelectedIndex( index + 1 ) }
+                    />
+                  </Link>
+                ))
+              }
             </ul>
           </ParticipateDesc>
         </ParticipateRight>

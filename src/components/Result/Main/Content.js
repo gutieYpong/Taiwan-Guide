@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import styled, { useTheme } from "styled-components";
 import { Pagination, Stack, Skeleton } from '@mui/material';
@@ -6,10 +6,9 @@ import { isEmpty } from 'lodash';
 
 import usePagination from "../../../hooks/usePagination";
 import { CardContainer, Card } from "./Card";
-import { fetchData, tourismInfo } from "../../../features/tourismSlice";
+import { fetchData, tourismInfo, setPage, setFilterData } from "../../../features/tourismSlice";
 import { layoutInfo } from "../../../features/layoutSlice";
-import { API_INFO_MAP, CATE_SELECTOR_MAP } from "../../../constants/common";
-import { fontLayout } from "../../../constants/api";
+import { DATA_FILTER_OBJECT } from "../../../constants/common";
 
 
 const Container = styled.div`
@@ -36,56 +35,64 @@ const CardBox = styled.div`
 
 
 const Content = props => {
+  const { CateSelector } = props;
+
   const theme = useTheme();
   const dispatch = useDispatch();
-  const _cateSelector = useSelector(layoutInfo).cateSelector;
-  const tourismStates = useSelector(tourismInfo);
-  const tourismData = tourismStates.data[_cateSelector];
+  const _tourismStates = useSelector(tourismInfo);
+  const _tourismData = _tourismStates.status === 'succeeded' ? 
+    ( isEmpty(_tourismStates.dataStates[CateSelector].filtered) ? 
+      _tourismStates.dataStates[CateSelector].data : 
+      _tourismStates.dataStates[CateSelector].filtered
+    ) : [];
+  const _tourismDataPage = _tourismStates.status === 'succeeded' ? _tourismStates.dataStates[CateSelector].page : 1;
 
-  // console.log(`cateSelector: ${layoutStates.cateSelector}`)
-  // console.log(`tourismData: ${tourismData}`)
-  const NUM_OF_ITEMS = tourismData.length;
+  /**
+   * ... Pagination related ...
+   */
   const ITEMS_PER_PAGE = 18;
-  const [page, setPage] = useState(1);
-
-  const count = Math.ceil( NUM_OF_ITEMS / ITEMS_PER_PAGE );
-  const _DATA = usePagination( tourismData, ITEMS_PER_PAGE );
+  const pageCount = Math.ceil( _tourismData.length / ITEMS_PER_PAGE );
+  const _DATA = usePagination( _tourismData, _tourismDataPage, ITEMS_PER_PAGE );
 
   const handleChange = ( e, p ) => {
-    setPage(p);
+    dispatch( setPage({ cateType: CateSelector, pageNum: p }) );
     _DATA.jumpPage(p);
+    window.scrollTo(0, 0); // scroll to top most
   }
 
-  // useEffect(() => {
-  //   // clean up controller
-  //   let isSubscribed = true;
+  useEffect(() => {
+    // clean up controller
+    let isSubscribed = true;
 
-  //   (
-  //     async() => {
-  //       if( isSubscribed && isEmpty(tourismStates.data[_cateSelector]) )
-  //         await dispatch(fetchData(
-  //           `https://ptx.transportdata.tw/MOTC/v2/Tourism/${_cateSelector}?%24top=200&%24format=JSON`
-  //         ));
-  //       else
-  //         throw new Error('jump to end.');
-  //     }
-  //   )()
-  //     .then( () => console.log(`data fetcted.`) )
-  //     .catch( error => console.log(error.message) );
+    (
+      async() => {
+        if( isSubscribed ) {
+          if( isEmpty(_tourismStates.dataStates[CateSelector]) || (!_tourismStates.dataStates[CateSelector].isFetch && _tourismStates.status !== 'loading') ) {
+            await dispatch(
+              fetchData({
+                url: `https://ptx.transportdata.tw/MOTC/v2/Tourism/${DATA_FILTER_OBJECT[CateSelector].api_category}/Tainan?%24top=200&%24format=JSON&%24orderby=ParkingInfo desc`,
+                cateType: CateSelector
+              })
+            );
+          }
+        }
+        else
+          throw new Error('jump to end.');
+      }
+    )()
+      .then( () => console.log(`data fetcted.`) )
+      .catch( error => console.log(error.message) );
 
-  //   // cancel subscription to useEffect
-  //   return () => (isSubscribed = false)
-  // }, [_cateSelector]);
+    // cancel subscription to useEffect
+    return () => (isSubscribed = false)
+  }, [CateSelector]);
 
-  // useEffect(() => {
-  //   setPage(1);
-  // }, [selectedIdx]);
 
   return (
     <Container>
       <CardBox>
         {
-          tourismStates.status === 'loading' ?
+          _tourismStates.status === 'loading' ?
           [...Array(10).keys()].map( item => (
             <CardContainer key={ `loading-item-${item}` }>
               <Skeleton sx={{ width: '100%', height: '13.7rem', borderRadius: '.5rem', backgroundColor: '#E7E7E7' }} animation="wave"  variant="rectangular" />
@@ -98,11 +105,11 @@ const Content = props => {
           _DATA.currentData().map((item, index) => {
             return (
               <Card
-                key={ item[API_INFO_MAP[CATE_SELECTOR_MAP[_cateSelector]].id_key] }
-                ItemName={ item[API_INFO_MAP[CATE_SELECTOR_MAP[_cateSelector]].name_key] }
+                key={ item[DATA_FILTER_OBJECT[CateSelector].params.id] }
+                ItemName={ item[DATA_FILTER_OBJECT[CateSelector].params.name] }
                 Item={ item }
                 Theme={ theme }
-                CateIndex={ CATE_SELECTOR_MAP[_cateSelector] }
+                MissingImgSrc={ DATA_FILTER_OBJECT[CateSelector].missing_img }
               />
             )
           })
@@ -110,8 +117,8 @@ const Content = props => {
       </CardBox>
       <Stack spacing={2} sx={{ alignSelf: 'end' }}>
         <Pagination
-          count={ count }
-          page={ page }
+          count={ pageCount }
+          page={ _tourismDataPage }
           siblingCount={1}
           boundaryCount={1}
           color="primary"

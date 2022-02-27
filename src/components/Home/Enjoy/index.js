@@ -1,7 +1,10 @@
+import { useDispatch } from 'react-redux';
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 import EnjoyCarousel from "./EnjoyCarousel";
-import { fontLayout } from "../../../constants/api";
+import { fetchData } from '../../../features/tourismSlice';
+import { fontLayout, CATEGORY_FILTER_API } from "../../../constants/api";
 import { ArrowIcon } from "../../../assets";
 
 
@@ -56,7 +59,7 @@ const EnjoyTopRight = styled.div`
     letter-spacing: 0.15em;
     ${ ({ theme }) => fontLayout('Noto Sans TC', 'normal', 'normal', '1.6rem', '2.3rem', theme.palette.neutral.main) }
   }
-  div {
+  a {
     white-space: nowrap;
 
     span {
@@ -85,6 +88,7 @@ const InnerEnjoyDown = styled.div`
 `;
 
 const Enjoy = props => {
+  const dispatch = useDispatch();
   return (
     <Container>
       <InnerEnjoyTop>
@@ -94,10 +98,18 @@ const Enjoy = props => {
         </EnjoyTopLeft>
         <EnjoyTopRight>
           <p>充斥在台灣大街小巷的在地美食，融合當地生活與文化特色，發展出各式各樣風味，從銅板小吃到精緻料理，數不清的美味讓你飽餐一頓。</p>
-          <div>
-            <span>享用更多美食</span>
-            <ArrowIcon />
-          </div>
+          <Link
+            to="/delicacy"
+            onClick={ () => {
+              dispatch(fetchData({
+                url: CATEGORY_FILTER_API('Restaurant'),
+                cateType: 'delicacy',
+              }));
+            }}
+            style={{ textDecoration: 'none' }}
+          >
+            <span>享用更多美食</span><ArrowIcon />
+          </Link>
         </EnjoyTopRight>
       </InnerEnjoyTop>
       <InnerEnjoyDown>

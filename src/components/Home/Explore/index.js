@@ -1,6 +1,10 @@
+import { useDispatch } from 'react-redux';
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-import { fontLayout } from "../../../constants/api";
+import { setCateSelector } from '../../../features/layoutSlice';
+import { fetchData } from '../../../features/tourismSlice';
+import { fontLayout, CATEGORY_FILTER_API } from "../../../constants/api";
 import { EXPLORE_LIST } from "../../../constants/common";
 import { ArrowIcon } from "../../../assets";
 
@@ -140,6 +144,8 @@ const ExploreImg = ({ Item }) => {
 
 
 const Explore = props => {
+  const dispatch = useDispatch();
+
   return (
     <Container>
       <InnerExplore>
@@ -148,7 +154,19 @@ const Explore = props => {
             <p>Explore</p>
             <p>探索台灣每個角落</p>
             <p>台灣擁有高山峽谷及四面環海地理特性，因此擁有各種自然景致等待人們發現，無論想要來場山林陶冶身心之旅，抑或體驗歷史人文的深度旅行，都可以在台灣這片土地上踏尋不同的風采。</p>
-            <span>探索更多景色</span><ArrowIcon />
+            <Link
+              to="/scenicSpot"
+              onClick={ () => {
+                dispatch(fetchData({
+                  url: CATEGORY_FILTER_API('ScenicSpot'),
+                  cateType: 'scenicSpot',
+                }));
+                dispatch( setCateSelector('scenicSpot') );
+              }}
+              style={{ textDecoration: 'none' }}
+            >
+              <span>探索更多景色</span><ArrowIcon/>
+            </Link>
           </ExploreDesc>
           <ExploreTopRightContent>
             <ExploreImg Item={ EXPLORE_LIST[0] } />

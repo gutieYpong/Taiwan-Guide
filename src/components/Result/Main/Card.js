@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { isEmpty } from "lodash";
 
 import { fontLayout } from "../../../constants/api";
-import { GPSIcon, MissingSpotImg, MissingRestaurantImg, MissingActivityImg } from "../../../assets";
+import { GPSIcon } from "../../../assets";
 import { HeartIcon } from "../../../constants/svg";
 
 export const CardContainer = styled.div`
@@ -12,6 +12,8 @@ export const CardContainer = styled.div`
   flex-direction: column;
   gap: .8rem;
   padding: .8rem;
+
+  background-color: ${ ({ HasParking, HasTicket }) => HasParking && HasTicket ? 'lightpink' : HasParking ? 'lightblue' : HasTicket ? 'lightgreen' : 'white' };
 
   .content-card--image {
     position: relative;
@@ -88,11 +90,15 @@ export const CardContainer = styled.div`
   }
 `;
 
-export const Card = ({ Item, ItemName, Theme, CateIndex }) => {
-  const MISSING_IMG_MAP = [MissingSpotImg, MissingRestaurantImg, MissingActivityImg];
+export const Card = ({ Item, ItemName, MissingImgSrc, Theme }) => {
   const isMissing = isEmpty( Item.Picture );
+
+  const hasParking = !isEmpty( Item.ParkingInfo );
+  const hasTicket = !isEmpty( Item.TicketInfo );
+  const comingSoon = Item.StartTime;
+
   return (
-    <CardContainer IsMissing={ isMissing }>
+    <CardContainer IsMissing={ isMissing } HasParking={ hasParking } HasTicket={ hasTicket }>
       <div className="content-card--image">
         <HeartIcon
           className="overlay"
@@ -100,13 +106,14 @@ export const Card = ({ Item, ItemName, Theme, CateIndex }) => {
           StrokeColor={ Theme.palette.white }
           // style={{ filter: 'brightness(85%)' }}
         />
-        <img className="image" src={ isMissing ? MISSING_IMG_MAP[CateIndex] : Item.Picture.PictureUrl1 } alt={ isMissing ? ItemName : Item.Picture.PictureDescription1 } />
+        <img className="image" src={ isMissing ? MissingImgSrc : Item.Picture.PictureUrl1 } alt={ isMissing ? ItemName : Item.Picture.PictureDescription1 } />
       </div>
       <div className="content-card--desc">
         <p className="content-card--title">{ ItemName }</p>
         <div className="content-card--location">
           <GPSIcon />
           <span>{ Item.City }</span>
+          <span>{ comingSoon }</span>
         </div>
       </div>
     </CardContainer>

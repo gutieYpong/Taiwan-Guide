@@ -1,7 +1,11 @@
+import { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import styled from "styled-components";
 
 import Filter from "./Filter";
 import Content from "./Content";
+import { layoutInfo, setCateSelector } from "../../../features/layoutSlice";
 import { NoResultFound, WebsiteFailure } from "./ErrorResponse";
 import { fontLayout } from "../../../constants/api";
 
@@ -27,11 +31,21 @@ const MainWrapper = styled.div`
 `;
 
 const Main = props => {
+  const dispatch = useDispatch();
+  const params = useParams();
+  const _cateSelector = params.cateSelector;
+
+  useEffect(() => {
+    // dispatch( setCateSelector(_cateSelector) )
+    return () => {
+    };
+  }, []);
+
   return (
     <Container>
       <MainWrapper>
-        <Filter />
-        <Content />
+        <Filter CateSelector={ _cateSelector } />
+        <Content CateSelector={ _cateSelector } />
         {/* <NoResultFound /> */}
         {/* <WebsiteFailure /> */}
       </MainWrapper>

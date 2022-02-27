@@ -2,9 +2,8 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-import { fetchData } from "../../../../features/tourismSlice";
-import { setCateSelector } from "../../../../features/layoutSlice";
-import { ACTIVITY_FILTER_LIST } from "../../../../constants/common";
+import { fetchData, setThemeSelector } from "../../../../features/tourismSlice";
+import { DATA_FILTER_OBJECT } from "../../../../constants/common";
 import { fontLayout, ACTIVITY_FILTER_API } from "../../../../constants/api";
 
 
@@ -57,6 +56,19 @@ const ActivityMenuBox = styled.div`
 const ActivityMenu = ({ ItemList }) => {
   const dispatch = useDispatch();
 
+  const handleClick = (index) => {
+    dispatch(
+      fetchData({
+        url: ACTIVITY_FILTER_API(
+          DATA_FILTER_OBJECT.activity.theme[index].filter.reduce((prev, curr, idx) => {
+            return prev + (idx ? " or " : "") + `Class1 eq '${curr}' or Class2 eq '${curr}'`
+          }, "")),
+          cateType: 'activity'
+      })
+    );
+    dispatch( setThemeSelector({ cateType: 'activity', index: index }) );
+  }
+
   return (
     <ActivityMenuBox>
       {
@@ -65,18 +77,7 @@ const ActivityMenu = ({ ItemList }) => {
             <img src={ item.icon_src } alt={ item.icon_desc } />
             <Link to="/activity"
               children={ item.icon_desc }
-              onClick={ () => {
-                dispatch(
-                  fetchData({
-                    url: ACTIVITY_FILTER_API(
-                      ACTIVITY_FILTER_LIST[item.icon_desc].reduce((prev, curr, idx) => {
-                        return prev + (idx ? " or " : "") + `Class1 eq '${curr}' or Class2 eq '${curr}'`
-                      }, "")),
-                    cate_type: 'activity'
-                  })
-                );
-                dispatch( setCateSelector('activity') );
-              }}
+              onClick={ () => handleClick(index) }
             />
           </ActivityMenuItemBox>
         ))

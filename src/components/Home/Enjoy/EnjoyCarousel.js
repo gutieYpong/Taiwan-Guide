@@ -79,12 +79,17 @@ const EnjoyCarousel = props => {
         loop={true} 
         grabCursor={true}
         freeMode={true}
-        freeModeMomentum={false}
+        // freeMode={{
+          // enable: false,
+          // sticky: true,
+          // momentum: false
+          // momentumBounce: true
+        // }}
         speed={2000}
         autoplay={{
-          "delay": 1,
-          "disableOnInteraction": false,
-          "pauseOnMouseEnter": true,
+          delay: 1,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
         }}
         className="mySwiper"
       >

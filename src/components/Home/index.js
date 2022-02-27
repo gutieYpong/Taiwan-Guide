@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 import Header from "./Header";
@@ -23,6 +23,8 @@ const GridBox = styled.div`
 `;
 
 const Home = props => {
+  useEffect(() => {
+  }, []);
   return (
     <GridBox>
       <Header />
