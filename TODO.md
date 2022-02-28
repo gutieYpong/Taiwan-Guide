@@ -9,6 +9,8 @@ TODO.
 - Search Page layout ✅
 - Manual path input no data fetching ✅
 - Search function
+- Filtering Optimized
+- Responsive Optimized
 
 TO BE FIXED.
 - Language options

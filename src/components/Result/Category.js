@@ -1,12 +1,12 @@
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import styled, { css } from "styled-components";
 
-import { layoutInfo, setCateSelector } from "../../features/layoutSlice";
+import { setCateSelector } from "../../features/layoutSlice";
 import { fontLayout } from "../../constants/api";
 
 
-const Container = styled.div( () => {
+const Container = styled.section( () => {
   // How many menu items do we have?
   const findingMenuItems = 3;
 
@@ -79,10 +79,9 @@ const Category = props => {
   const dispatch = useDispatch();
   const params = useParams();
   const _cateSelector = params.cateSelector;
-  // const _cateSelector = useSelector(layoutInfo).cateSelector;
   
   return (
-    <Container>
+    <Container aria-label="search-result__category-selection">
       <StyledLink
         to="/scenicSpot"
         className={ `finding-menu-item ${ _cateSelector === 'scenicSpot' ? "is-active" : "" }` }

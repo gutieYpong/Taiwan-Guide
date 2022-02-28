@@ -6,8 +6,7 @@ import { isEmpty } from 'lodash';
 
 import usePagination from "../../../hooks/usePagination";
 import { CardContainer, Card } from "./Card";
-import { fetchData, tourismInfo, setPage, setFilterData } from "../../../features/tourismSlice";
-import { layoutInfo } from "../../../features/layoutSlice";
+import { fetchData, tourismInfo, setPage } from "../../../features/tourismSlice";
 import { DATA_FILTER_OBJECT } from "../../../constants/common";
 
 
@@ -64,24 +63,20 @@ const Content = props => {
     // clean up controller
     let isSubscribed = true;
 
-    (
-      async() => {
-        if( isSubscribed ) {
-          if( isEmpty(_tourismStates.dataStates[CateSelector]) || (!_tourismStates.dataStates[CateSelector].isFetch && _tourismStates.status !== 'loading') ) {
-            await dispatch(
-              fetchData({
-                url: `https://ptx.transportdata.tw/MOTC/v2/Tourism/${DATA_FILTER_OBJECT[CateSelector].api_category}/Tainan?%24top=200&%24format=JSON&%24orderby=ParkingInfo desc`,
-                cateType: CateSelector
-              })
-            );
-          }
+    if( isSubscribed ) {
+      if( isEmpty(_tourismStates.dataStates[CateSelector]) || (!_tourismStates.dataStates[CateSelector].isFetch && _tourismStates.status !== 'loading') ) {
+        try {
+          dispatch(
+            fetchData({
+              url: `https://ptx.transportdata.tw/MOTC/v2/Tourism/${DATA_FILTER_OBJECT[CateSelector].api_category}/Tainan?%24top=200&%24format=JSON&%24orderby=ParkingInfo desc`,
+              cateType: CateSelector
+            })
+          )
+        } catch(e) {
+          console.log(`Something wrong in Content fetching, error: ${e}`);
         }
-        else
-          throw new Error('jump to end.');
       }
-    )()
-      .then( () => console.log(`data fetcted.`) )
-      .catch( error => console.log(error.message) );
+    }
 
     // cancel subscription to useEffect
     return () => (isSubscribed = false)

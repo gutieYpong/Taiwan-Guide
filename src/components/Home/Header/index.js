@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styled, { useTheme } from "styled-components";
 
 import ToggleMenu from "./ToggleMenu";
@@ -7,11 +7,11 @@ import { HeartIcon } from "../../../constants/svg";
 import { LogoIcon, FaqIcon, FaqFilledIcon } from "../../../assets";
 
 
-const Container = styled.div`
+const Container = styled.header`
   /* position: relative;   */
   position: fixed;
   width: 100%;
-  max-width: 144rem;
+  /* max-width: 144rem; */
   height: 100%;
   max-height: 10rem;
   display: flex;
@@ -24,8 +24,9 @@ const Container = styled.div`
 const NaviWrapper = styled.div`
   position: relative;
   width: 100%;
+  max-width: 144rem;
   height: 100%;
-  margin: 0 15rem;
+  padding: 0 15rem;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-column-gap: 1.6rem;
@@ -118,7 +119,7 @@ const Header = props => {
   const theme = useTheme()
 
   return (
-    <Container onMouseLeave={ () => setMenuSelector(null) }>
+    <Container aria-label="header" onMouseLeave={ () => setMenuSelector(null) }>
       <NaviWrapper>
         { menuSelector !== null && (
         <ToggleMenu 

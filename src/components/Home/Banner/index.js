@@ -13,12 +13,12 @@ import { Swiper, SwiperSlide } from "swiper/react"; // Import Swiper React compo
 import { Autoplay, EffectFade, Pagination } from "swiper"; // import required modules
 
 
-const Container = styled.div`
+const Container = styled.section`
   position: relative;
   width: 100%;
-  max-width: 100%;
   height: 100%;
   max-height: 92.4rem;
+  margin-top: 10rem; // height of Header
   overflow: hidden;
 
   //* Carousel layout
@@ -36,7 +36,7 @@ const Container = styled.div`
       img {
         display: block;
         width: 100%;
-        max-width: 144rem;
+        /* max-width: 144rem; */
         height: 100%;
         object-fit: cover;
       }
@@ -64,7 +64,7 @@ const SearchBox = styled.div`
 
 const Banner = props => {
   return (
-    <Container>
+    <Container aria-label="banner-carousel">
       <SearchBox>
         <Search />
       </SearchBox>

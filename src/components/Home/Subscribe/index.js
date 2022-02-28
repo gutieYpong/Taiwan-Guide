@@ -4,16 +4,22 @@ import { fontLayout } from "../../../constants/api";
 import { SubscribeImg, SendIcon } from "../../../assets";
 
 
-const Container = styled.div`
-  /* grid-area: subscribe; */
+const Container = styled.section`
+  width: 100%;
+  height: 100%;
+  max-height: 62rem;
+  display: grid;
+  justify-items: center;
+  background-color: ${ ({ theme }) => theme.palette.primary.main };
+`;
+
+const SubscribeWrapper = styled.div`
   width: 100%;
   max-width: 144rem;
   height: 100%;
-  max-height: 62rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${ ({ theme }) => theme.palette.primary.main };
 `;
 
 const InnerSubscribe = styled.div`
@@ -119,25 +125,27 @@ const SubscribeEmailDiv = styled.div`
 
 const Subscribe = props => {
   return (
-    <Container>
-      <InnerSubscribe>
-        <SubscribeImgBox>
-          <img src={ SubscribeImg } alt="subscribe" />
-        </SubscribeImgBox>
-        <SubscribeDesc>
-          <SubscribeDescTop>
-            <p>Subscribe</p>
-            <p>每個月來場放鬆旅行</p>
-          </SubscribeDescTop>
-          <SubscribeDescBottom>
-            <p>如果你願意收到每月旅遊資訊，一起感受台灣旅行的美好。</p>
-            <SubscribeEmailDiv>
-              <input type="text" placeholder="youremail@example.com" />
-              <SendIcon />
-            </SubscribeEmailDiv>
-          </SubscribeDescBottom>
-        </SubscribeDesc>
-      </InnerSubscribe>
+    <Container aria-label="subscribe-box">
+      <SubscribeWrapper>
+        <InnerSubscribe>
+          <SubscribeImgBox>
+            <img src={ SubscribeImg } alt="subscribe" />
+          </SubscribeImgBox>
+          <SubscribeDesc>
+            <SubscribeDescTop>
+              <p>Subscribe</p>
+              <p>每個月來場放鬆旅行</p>
+            </SubscribeDescTop>
+            <SubscribeDescBottom>
+              <p>如果你願意收到每月旅遊資訊，一起感受台灣旅行的美好。</p>
+              <SubscribeEmailDiv>
+                <input type="text" placeholder="youremail@example.com" />
+                <SendIcon />
+              </SubscribeEmailDiv>
+            </SubscribeDescBottom>
+          </SubscribeDesc>
+        </InnerSubscribe>
+      </SubscribeWrapper>
     </Container>
   );
 }

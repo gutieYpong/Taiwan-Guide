@@ -4,7 +4,7 @@ import { isEmpty } from 'lodash';
 import styled from "styled-components";
 
 import { fetchData, tourismInfo, setThemeSelector, setPage, setFilterData } from "../../../features/tourismSlice";
-import { fontLayout, SCENIC_SPOT_FILTER_API, RESTAURANT_FILTER_API, ACTIVITY_FILTER_API, SORTING_FILTER_API, getSortedAPI } from "../../../constants/api";
+import { fontLayout, SCENIC_SPOT_FILTER_API, RESTAURANT_FILTER_API, ACTIVITY_FILTER_API, getSortedAPI } from "../../../constants/api";
 import { SortingDropdown } from "../../../stories/mine/Dropdown";
 import { DATA_FILTER_OBJECT } from "../../../constants/common";
 import { getFilteredData } from "../../../features/filterFunc";
@@ -239,7 +239,6 @@ const Filter = props => {
   }
 
   useEffect(() => {
-    console.log(`filter side effect`)
     let filters = document.querySelectorAll('#serviceFilter');
     filters.forEach( item => item.checked = false );
 

@@ -7,17 +7,26 @@ import { fetchData } from '../../../features/tourismSlice';
 import { fontLayout, CATEGORY_FILTER_API } from "../../../constants/api";
 import { EXPLORE_LIST } from "../../../constants/common";
 import { ArrowIcon } from "../../../assets";
+import { size } from '../../../constants/breakpoints';
 
 
-const Container = styled.div`
+const Container = styled.section`
+  width: 100%;
+  height: 100%;
+  max-height: 106rem;
+  display: grid;
+  justify-items: center;
+  background-color: ${ ({ theme }) => theme.palette.white };
+`;
+
+const ExploreWrapper = styled.div`
   width: 100%;
   max-width: 144rem;
   height: 100%;
-  max-height: 106rem;
   display: flex;
   justify-content: flex-end;
   padding: 15rem 0 17rem 0;
-  background-color: ${ ({ theme }) => theme.palette.white };
+  overflow: hidden;
 `;
 
 const InnerExplore = styled.div`
@@ -41,7 +50,10 @@ const ExploreTopContent = styled.div`
 `;
 
 const ExploreDesc = styled.div`
+  /* flex: 1; */
   width: 51.4rem;
+  /* width: auto; */
+  /* max-width: 51.4rem; */
   height: 27.8rem;
 
   /* border: 1px solid cyan; */
@@ -80,14 +92,14 @@ const ExploreDesc = styled.div`
 `;
 
 const ExploreTopRightContent = styled.div`
-  flex: 1;
   display: flex;
   gap: 1.4rem;
-  overflow: hidden;
+  margin-right: -11.9rem;
 `;
 
 const ExploreBottomContent = styled.div`
   width: auto;
+  max-width: 114rem;
   height: 35rem;
   display: flex;
   gap: 1.4rem;
@@ -120,7 +132,7 @@ const ExploreImgBox = styled.div`
     }
   }
   span {
-    width: 1.8rem;
+    /* width: 1.8rem; */
     letter-spacing: 0.15em;
     writing-mode: vertical-rl;
     text-orientation: upright;
@@ -147,40 +159,42 @@ const Explore = props => {
   const dispatch = useDispatch();
 
   return (
-    <Container>
-      <InnerExplore>
-        <ExploreTopContent>
-          <ExploreDesc>
-            <p>Explore</p>
-            <p>探索台灣每個角落</p>
-            <p>台灣擁有高山峽谷及四面環海地理特性，因此擁有各種自然景致等待人們發現，無論想要來場山林陶冶身心之旅，抑或體驗歷史人文的深度旅行，都可以在台灣這片土地上踏尋不同的風采。</p>
-            <Link
-              to="/scenicSpot"
-              onClick={ () => {
-                dispatch(fetchData({
-                  url: CATEGORY_FILTER_API('ScenicSpot'),
-                  cateType: 'scenicSpot',
-                }));
-                dispatch( setCateSelector('scenicSpot') );
-              }}
-              style={{ textDecoration: 'none' }}
-            >
-              <span>探索更多景色</span><ArrowIcon/>
-            </Link>
-          </ExploreDesc>
-          <ExploreTopRightContent>
-            <ExploreImg Item={ EXPLORE_LIST[0] } />
-            <ExploreImg Item={ EXPLORE_LIST[1] } />
-            <ExploreImg Item={ EXPLORE_LIST[2] } />
-          </ExploreTopRightContent>
-        </ExploreTopContent>
-        <ExploreBottomContent>
-          <ExploreImg Item={ EXPLORE_LIST[3] } />
-          <ExploreImg Item={ EXPLORE_LIST[4] } />
-          <ExploreImg Item={ EXPLORE_LIST[5] } />
-          <ExploreImg Item={ EXPLORE_LIST[6] } />
-        </ExploreBottomContent>
-      </InnerExplore>
+    <Container aria-label="explore">
+      <ExploreWrapper>
+        <InnerExplore>
+          <ExploreTopContent>
+            <ExploreDesc>
+              <p>Explore</p>
+              <p>探索台灣每個角落</p>
+              <p>台灣擁有高山峽谷及四面環海地理特性，因此擁有各種自然景致等待人們發現，無論想要來場山林陶冶身心之旅，抑或體驗歷史人文的深度旅行，都可以在台灣這片土地上踏尋不同的風采。</p>
+              <Link
+                to="/scenicSpot"
+                onClick={ () => {
+                  dispatch(fetchData({
+                    url: CATEGORY_FILTER_API('ScenicSpot'),
+                    cateType: 'scenicSpot',
+                  }));
+                  dispatch( setCateSelector('scenicSpot') );
+                }}
+                style={{ textDecoration: 'none' }}
+              >
+                <span>探索更多景色</span><ArrowIcon/>
+              </Link>
+            </ExploreDesc>
+            <ExploreTopRightContent>
+              <ExploreImg Item={ EXPLORE_LIST[0] } />
+              <ExploreImg Item={ EXPLORE_LIST[1] } />
+              <ExploreImg Item={ EXPLORE_LIST[2] } />
+            </ExploreTopRightContent>
+          </ExploreTopContent>
+          <ExploreBottomContent>
+            <ExploreImg Item={ EXPLORE_LIST[3] } />
+            <ExploreImg Item={ EXPLORE_LIST[4] } />
+            <ExploreImg Item={ EXPLORE_LIST[5] } />
+            <ExploreImg Item={ EXPLORE_LIST[6] } />
+          </ExploreBottomContent>
+        </InnerExplore>
+      </ExploreWrapper>
     </Container>
   );
 }

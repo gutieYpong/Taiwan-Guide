@@ -6,22 +6,22 @@ import { Dropdown } from "../../../stories/mine/Dropdown";
 import { CITY_LIST } from "../../../constants/common";
 
 
-const Container = styled.div`
+const Container = styled.section`
   /* grid-area: search; */
   width: 100%;
-  max-width: 144rem;
   height: 100%;
   max-height: 10.9rem;
-  display: flex;
-  justify-content: center;
-  padding: 4.5rem 15rem 1.6rem 15rem;
+  display: grid;
+  justify-items: center;
   background-color: ${ ({ theme }) => theme.palette.white };
 `;
 
 const SearchWrapper = styled.div`
   width: 100%;
+  max-width: 114rem;
   height: auto;
   display: grid;
+  padding: 4.5rem 0 1.6rem 0;
   grid-template-columns: 27.3rem 85.1rem;
   grid-column-gap: 1.6rem;
 `;
@@ -92,7 +92,7 @@ const SearchBtn = styled.button`
 
 const Search = props => {
   return (
-    <Container>
+    <Container aria-label="search-result__search-bar">
       <SearchWrapper>
         <Title children="你目前正在搜索" />
         <SearchBar>

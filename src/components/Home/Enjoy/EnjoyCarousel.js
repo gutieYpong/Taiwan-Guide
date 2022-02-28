@@ -77,15 +77,16 @@ const EnjoyCarousel = props => {
         slidesPerView={5} 
         spaceBetween={16} 
         loop={true} 
+        loopFillGroupWithBlank={true}
         grabCursor={true}
-        freeMode={true}
-        // freeMode={{
-          // enable: false,
+        // freeMode={true}
+        freeMode={{
+          enable: true,
           // sticky: true,
-          // momentum: false
+          momentum: false,
           // momentumBounce: true
-        // }}
-        speed={2000}
+        }}
+        speed={5000}
         autoplay={{
           delay: 1,
           disableOnInteraction: false,

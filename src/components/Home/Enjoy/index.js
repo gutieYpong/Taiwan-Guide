@@ -8,9 +8,9 @@ import { fontLayout, CATEGORY_FILTER_API } from "../../../constants/api";
 import { ArrowIcon } from "../../../assets";
 
 
-const Container = styled.div`
+const Container = styled.section`
   width: 100%; // docs: 1440px
-  max-width: 144rem;
+  /* max-width: 144rem; */
   height: 100%;
   max-height: 89.6rem;
   display: flex;
@@ -31,6 +31,7 @@ const InnerEnjoyTop = styled.div`
 `;
 
 const EnjoyTopLeft = styled.div`
+  flex: 1;
   width: auto;
   height: 100%;
 
@@ -48,7 +49,7 @@ const EnjoyTopLeft = styled.div`
 `;
 
 const EnjoyTopRight = styled.div`
-  width: 528px;
+  width: 52.8rem;
   height: 100%;
   
   /* background-color: cyan; */
@@ -90,7 +91,7 @@ const InnerEnjoyDown = styled.div`
 const Enjoy = props => {
   const dispatch = useDispatch();
   return (
-    <Container>
+    <Container aria-label="enjoy">
       <InnerEnjoyTop>
         <EnjoyTopLeft>
           <p>Enjoy</p>

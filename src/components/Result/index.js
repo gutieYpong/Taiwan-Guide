@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from 'react-redux';
+import React from "react";
 import styled from "styled-components";
 
 import Header from "./Header";
@@ -8,12 +7,10 @@ import Category from "./Category";
 import Main from "./Main";
 import Footer from "../Footer";
 
-import { tourismInfo, fetchData } from "../../features/tourismSlice";
-import { API_INFO_MAP } from "../../constants/common";
 
 const GridBox = styled.div`
   width: 100%;
-  max-width: 144rem;
+  /* max-width: 144rem; */
   height: auto;
   max-height: 185.6rem;
   display: grid;

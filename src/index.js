@@ -23,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
     }
     /* @media screen and ( max-height: ${ size.tablet } ) { // my macbook max-height only got 689px
       font-size: 45%;
-    }
+    } */
     @media screen and ( max-width: ${ size.laptop } ) {
       font-size: 48%;
     }
@@ -45,7 +45,7 @@ const GlobalStyle = createGlobalStyle`
     @media screen and (orientation: landscape) and ( max-width: ${ size.tablet } ) {
       // change to SPA style
       font-size: 62.5%;
-    } */
+    }
   }
 `;
 

@@ -8,31 +8,42 @@ import { fontLayout, ACTIVITY_FILTER_API } from "../../../constants/api";
 import { PARTICIPATE_IMAGES, DATA_FILTER_OBJECT } from "../../../constants/common";
 
 
-const Container = styled.div`
+const Container = styled.section`
   width: 100%;
-  max-width: 144rem;
   height: 100%;
   max-height: 78rem;
-  padding: 16rem 0 19rem 0;
+  display: grid;
+  justify-items: center;
   background-color: ${ ({ theme }) => theme.palette.neutral.lightest };
 `;
 
+const ParticipateWrapper = styled.div`
+  width: 100%;
+  max-width: 144rem;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding: 16rem 0 19rem 0;
+`;
+
 const InnerParticipate = styled.div`
-  width: 129rem;
+  min-width: 89.58%; // 1290 / 1440 */
   max-width: 129rem;
   height: 43rem;
   display: flex;
   gap: 3.2rem;
 
   img {
-    width: 85.1rem;
+    flex: 1;
+    max-width: 85.1rem;
     height: 100%;
     border-radius: 0 .5rem .5rem 0;
   }
 `;
 
 const ParticipateRight = styled.div`
-  width: 48.2rem;
+  /* width: 36.12%; // 466 / 1290 */
+  max-width: 48.2rem;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -41,7 +52,8 @@ const ParticipateRight = styled.div`
 `;
 
 const ParticipateDesc = styled.div`
-  width: 418px;
+  width: 100%;
+  max-width: 41.8rem;
   height: 100%;
 
   /* background-color: orange; */
@@ -117,43 +129,45 @@ const Participate = props => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   return (
-    <Container>
-      <InnerParticipate>
-        <img src={ PARTICIPATE_IMAGES[selectedIndex] } alt={`participate-${selectedIndex}`} />
-        <ParticipateRight>
-          <ParticipateDesc>
-            <p>Participate</p>
-            <p>體驗當地風情人文</p>
-            <p>台灣擁有豐富文俗風情，因地貌多變延伸出豐富的主題活動，邀請你體驗文化的精彩。</p>
-            <ul>
-              {
-                ITEM_DESC_LIST.map((item, index) => (
-                  <Link to="/activity"
-                    key={`participate-activity-${index}`}
-                    onClick={ () => {
-                      dispatch(
-                        fetchData({
-                          url: ACTIVITY_FILTER_API(
-                            DATA_FILTER_OBJECT.activity.theme[index].filter.reduce((prev, curr, idx) => {
-                              return prev + (idx ? " or " : "") + `Class1 eq '${curr}' or Class2 eq '${curr}'`
-                            }, "")),
-                            cateType: 'activity'
-                        })
-                      );
-                      dispatch( setThemeSelector({ cateType: 'activity', index: index }) );
-                    }}
-                  >
-                    <li
-                      children={ item }
-                      onMouseEnter={ () => setSelectedIndex( index + 1 ) }
-                    />
-                  </Link>
-                ))
-              }
-            </ul>
-          </ParticipateDesc>
-        </ParticipateRight>
-      </InnerParticipate>
+    <Container aria-label="participate">
+      <ParticipateWrapper>
+        <InnerParticipate>
+          <img src={ PARTICIPATE_IMAGES[selectedIndex] } alt={`participate-${selectedIndex}`} />
+          <ParticipateRight>
+            <ParticipateDesc>
+              <p>Participate</p>
+              <p>體驗當地風情人文</p>
+              <p>台灣擁有豐富文俗風情，因地貌多變延伸出豐富的主題活動，邀請你體驗文化的精彩。</p>
+              <ul>
+                {
+                  ITEM_DESC_LIST.map((item, index) => (
+                    <Link to="/activity"
+                      key={`participate-activity-${index}`}
+                      onClick={ () => {
+                        dispatch(
+                          fetchData({
+                            url: ACTIVITY_FILTER_API(
+                              DATA_FILTER_OBJECT.activity.theme[index].filter.reduce((prev, curr, idx) => {
+                                return prev + (idx ? " or " : "") + `Class1 eq '${curr}' or Class2 eq '${curr}'`
+                              }, "")),
+                              cateType: 'activity'
+                          })
+                        );
+                        dispatch( setThemeSelector({ cateType: 'activity', index: index }) );
+                      }}
+                    >
+                      <li
+                        children={ item }
+                        onMouseEnter={ () => setSelectedIndex( index + 1 ) }
+                      />
+                    </Link>
+                  ))
+                }
+              </ul>
+            </ParticipateDesc>
+          </ParticipateRight>
+        </InnerParticipate>
+      </ParticipateWrapper>
     </Container>
   );
 }

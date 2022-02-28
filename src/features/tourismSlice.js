@@ -23,7 +23,6 @@ const getAuthorizationHeader = () => {
 
 export const fetchData = createAsyncThunk( 'users/fetchByIdStatus', async( {url, cateType}, thunkAPI ) => {
   console.log(`query url: ${url}`)
-  console.log(`thunkAPI: ${JSON.stringify(thunkAPI)}`)
   const result = await axios.get(
     url,
     {

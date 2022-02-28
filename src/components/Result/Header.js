@@ -6,11 +6,10 @@ import { HeartIcon } from "../../constants/svg";
 import { LogoIcon, FaqIcon, FaqFilledIcon, CancelIcon } from "../../assets";
 
 
-const Container = styled.div`
+const Container = styled.header`
   position: relative; //*
   /* grid-area: header; */
   width: 100%;
-  max-width: 144rem;
   height: 100%;
   max-height: 6.4rem; //*
   display: flex;
@@ -23,8 +22,9 @@ const Container = styled.div`
 const NaviWrapper = styled.div`
   position: relative;
   width: 100%;
+  max-width: 144rem;
   height: 100%;
-  margin: 0 15rem;
+  padding: 0 15rem;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-column-gap: 1.6rem;
@@ -91,7 +91,7 @@ const Header = props => {
   const theme = useTheme();
 
   return (
-    <Container>
+    <Container aria-label="search-result__header">
       <NaviWrapper>
         <NaviItem StartCol={ 1 } EndCol={ 3 } JustifyContent="left">
           <a href="/">

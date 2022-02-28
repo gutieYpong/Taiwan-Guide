@@ -127,7 +127,7 @@ export const EXPLORE_LIST = [
   },
   {
     img_src: Explore3,
-    img_name: 'NULL',
+    img_name: '',
   },
   {
     img_src: Explore4,

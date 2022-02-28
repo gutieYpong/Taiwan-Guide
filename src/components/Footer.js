@@ -4,7 +4,7 @@ import { fontLayout } from "../constants/api";
 import { FacebookIcon, InstagramIcon, YoutubeIcon } from "../assets";
 
 
-const Container = styled.div`
+const Container = styled.footer`
   /* grid-area: ${ ({ GridArea }) => GridArea ? 'footer' : 'auto' }; */
   width: 100%;
   height: 100%;
@@ -13,6 +13,7 @@ const Container = styled.div`
   justify-content: space-around;
   align-items: center;
   background-color: ${ ({ theme }) => theme.palette.white };
+  z-index: 4;
 `;
 
 const FooterLeft = styled.div`
@@ -68,9 +69,9 @@ const FooterRight = styled.div`
   }
 `;
 
-const Footer = ({ className, GridArea, ...props }) => {
+const Footer = ({ GridArea, ...props }) => {
   return (
-    <Container className={ className } GridArea={ GridArea } {...props}>
+    <Container GridArea={ GridArea } {...props}>
       <FooterLeft>
         <p>Follow us</p>
         <FacebookIcon />
@@ -78,7 +79,7 @@ const Footer = ({ className, GridArea, ...props }) => {
         <YoutubeIcon />
       </FooterLeft>
       <FooterCenter>
-        <p>Copyright © 2021 TRAVEL. All rights reserved - UI: Lola , Web: gutiepong.</p>
+        <p>Copyright © 2022 TRAVEL. All rights reserved - UI: Lola , Web: gutiepong.</p>
       </FooterCenter>
       <FooterRight>
         <span style={{ color: '#737373' }}>CH</span>
